@@ -2,103 +2,192 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>
-        Faruq Ayomide Ojolowo — Founder & CEO of Apex Universal Studios™
-    </title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <meta
         name="description"
-        content="The personal website of Faruq Ayomide Ojolowo, Founder & CEO of Apex Universal Studios™."
+        content="Faruq Ayomide Ojolowo — Founder & CEO of Apex Universal Studios™. Building an enduring ecosystem across entertainment, media, technology, and intellectual property."
     >
+
+    <meta
+        name="theme-color"
+        content="#07111f"
+    >
+
+    <title>Faruq Ayomide Ojolowo — Founder</title>
 
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-    <!-- =========================
-         NAVIGATION
-    ========================== -->
+    <!-- =====================================================
+         SITE NAVIGATION
+         ===================================================== -->
 
-    <nav class="site-nav">
-        <div class="nav-container">
+    <header class="site-header">
 
-            <a href="#home" class="nav-logo">
+        <nav class="site-nav" aria-label="Main navigation">
+
+            <a href="#home" class="nav-brand" aria-label="Faruq home">
                 FARUQ
             </a>
 
-            <div class="nav-links">
+            <div class="nav-pill">
+
                 <a href="#about">About</a>
+
                 <a href="#building">What I'm Building</a>
+
                 <a href="#apex">Apex</a>
+
                 <a href="#projects">Projects</a>
-                <a href="#philosophy">Writing / Ideas</a>
+
+                <a href="#ideas">Writing / Ideas</a>
+
                 <a href="#media">Media</a>
+
                 <a href="#contact">Contact</a>
+
             </div>
 
-        </div>
-    </nav>
+            <button
+                class="nav-menu-button"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+            >
+                <span></span>
+                <span></span>
+            </button>
+
+        </nav>
+
+    </header>
 
 
     <main>
 
-        <!-- =========================
+        <!-- =================================================
              HERO
-        ========================== -->
+             ================================================= -->
 
-        <header id="home" class="hero">
+        <section id="home" class="hero section-dark">
 
-            <div class="hero-content">
+            <!-- Decorative graphic -->
+            <div class="hero-orbit" aria-hidden="true">
+                <div class="orbit orbit-one"></div>
+                <div class="orbit orbit-two"></div>
+                <div class="orbit-core"></div>
+            </div>
 
-                <p class="eyebrow">
-                    FOUNDER & CEO OF APEX UNIVERSAL STUDIOS™
-                </p>
+            <div class="hero-grid">
 
-                <h1>
-                    FARUQ AYOMIDE OJOLOWO
-                </h1>
+                <div class="hero-copy">
 
-                <p class="hero-description">
-                    Building an enduring ecosystem across entertainment,
-                    media, technology, and intellectual property.
-                </p>
+                    <p class="eyebrow">
+                        Founder & CEO of Apex Universal Studios™
+                    </p>
 
-                <div class="hero-actions">
-                    <a href="#building" class="button">
-                        Explore what I'm building
-                    </a>
+                    <h1>
+                        Faruq Ayomide<br>
+                        Ojolowo
+                    </h1>
 
-                    <a href="#about" class="button button-secondary">
-                        About Faruq
-                    </a>
+                    <p class="hero-description">
+                        Building an enduring ecosystem across entertainment,
+                        media, technology, and intellectual property.
+                    </p>
+
+                    <div class="hero-actions">
+
+                        <a
+                            href="#building"
+                            class="glass-button glass-button-primary"
+                        >
+                            <span>Explore what I'm building</span>
+                            <span aria-hidden="true">→</span>
+                        </a>
+
+                        <a
+                            href="#about"
+                            class="glass-button"
+                        >
+                            About Faruq
+                        </a>
+
+                    </div>
+
+                    <div class="scroll-indicator" aria-hidden="true">
+                        <span class="scroll-line"></span>
+                        <span>Scroll</span>
+                    </div>
+
+                </div>
+
+
+                <!-- YOUR PHOTO PLACEHOLDER -->
+                <div class="hero-visual">
+
+                    <div class="image-placeholder hero-photo-placeholder">
+
+                        <div class="placeholder-icon">
+                            <span></span>
+                        </div>
+
+                        <p>Your photo goes here</p>
+
+                        <small>
+                            Add your image to the repository
+                        </small>
+
+                    </div>
+
                 </div>
 
             </div>
 
-        </header>
+        </section>
 
 
-        <!-- =========================
+        <!-- =================================================
              INTRODUCTION
-        ========================== -->
+             ================================================= -->
 
-        <section class="intro section">
+        <section class="section section-dark introduction">
 
-            <div class="section-container">
+            <div class="section-container intro-grid">
 
-                <p class="eyebrow">
-                    INTRODUCTION
-                </p>
+                <!-- YOUR PHOTO PLACEHOLDER -->
+                <div class="image-placeholder portrait-placeholder">
 
-                <h2>
-                    A founder at the intersection
-                    of creativity, technology, and business.
-                </h2>
+                    <div class="placeholder-icon">
+                        <span></span>
+                    </div>
 
-                <div class="text-block">
+                    <p>Your photo goes here</p>
+
+                    <small>
+                        Add your image to the repository
+                    </small>
+
+                </div>
+
+
+                <div class="intro-copy">
+
+                    <p class="section-label">
+                        Introduction
+                    </p>
+
+                    <h2>
+                        A founder at the intersection of creativity,
+                        technology, and business.
+                    </h2>
 
                     <p>
                         I'm Faruq Ayomide Ojolowo, known as
@@ -116,12 +205,26 @@
                     <p>
                         Today, I'm building
                         <strong>Apex Universal Studios™</strong>
-                        while continuing my education and developing
-                        the creative, technical, business, and leadership
+                        while continuing my education and developing the
+                        creative, technical, business, and leadership
                         capabilities required for the larger vision
                         I'm working toward.
                     </p>
 
+                    <a href="#about" class="text-link">
+                        More about Faruq
+                        <span>→</span>
+                    </a>
+
+                </div>
+
+
+                <!-- Decorative glass graphic -->
+                <div class="intro-graphic" aria-hidden="true">
+
+                    <div class="glass-shape glass-shape-one"></div>
+                    <div class="glass-shape glass-shape-two"></div>
+
                 </div>
 
             </div>
@@ -129,161 +232,280 @@
         </section>
 
 
-        <!-- =========================
+        <!-- =================================================
              WHAT I'M BUILDING
-        ========================== -->
+             ================================================= -->
 
-        <section id="building" class="section section-dark">
-
-            <div class="section-container">
-
-                <p class="eyebrow">
-                    01 — WHAT I'M BUILDING
-                </p>
-
-                <h2>
-                    Beyond a single discipline.
-                </h2>
-
-                <div class="text-block">
-
-                    <p>
-                        I'm interested in what happens when
-                        <strong>
-                            creative work, technology, business,
-                            and intellectual property
-                        </strong>
-                        are treated as parts of the same system.
-                    </p>
-
-                    <p>
-                        That idea sits at the center of how I think
-                        about building.
-                    </p>
-
-                    <p>
-                        I don't want my work to be limited to one
-                        medium or one professional identity.
-                        I'm developing across animation, visual design,
-                        technology, AI, automation, software,
-                        programming, business, management, art direction,
-                        writing, worldbuilding, and decision-making.
-                    </p>
-
-                    <p>
-                        The objective isn't simply to collect skills.
-                    </p>
-
-                    <p>
-                        It is to become capable of understanding enough
-                        of the different parts of a larger system to make
-                        informed decisions, work with specialists,
-                        recognize opportunities, and build something
-                        that can grow.
-                    </p>
-
-                </div>
-
-                <div class="direction">
-
-                    <p class="eyebrow">
-                        THE DEVELOPMENT CYCLE
-                    </p>
-
-                    <p class="direction-line">
-                        Create → Develop → Operate → Own → Expand
-                        → Adapt → Preserve → Build Again
-                    </p>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             APEX
-        ========================== -->
-
-        <section id="apex" class="section">
+        <section id="building" class="section section-dark building">
 
             <div class="section-container">
 
-                <p class="eyebrow">
-                    02 — APEX UNIVERSAL STUDIOS™
-                </p>
+                <div class="section-heading split-heading">
 
-                <h2>
-                    The company I'm building.
-                </h2>
+                    <div>
 
-                <div class="text-block">
+                        <p class="section-label">
+                            01 — What I'm Building
+                        </p>
 
-                    <p>
-                        <strong>Apex Universal Studios™</strong>
-                        is the company I founded and lead.
-                    </p>
+                        <h2>
+                            Beyond a single discipline.
+                        </h2>
 
-                    <p>
-                        What began from an interest in animation
-                        developed into a broader company vision
-                        combining:
-                    </p>
+                    </div>
+
+                    <div class="heading-copy">
+
+                        <p>
+                            I'm interested in what happens when creative
+                            work, technology, business, and intellectual
+                            property are treated as parts of the same system.
+                        </p>
+
+                        <p>
+                            That idea sits at the center of how I think
+                            about building.
+                        </p>
+
+                        <a href="#vision" class="text-link">
+                            Explore the full vision
+                            <span>→</span>
+                        </a>
+
+                    </div>
 
                 </div>
 
-                <div class="feature-grid">
 
-                    <article class="feature-card">
-                        <h3>Entertainment</h3>
+                <div class="glass-card-grid four-columns">
+
+                    <!-- CARD -->
+                    <article class="glass-card feature-card">
+
+                        <div class="card-icon">
+                            <span>✦</span>
+                        </div>
+
+                        <h3>
+                            Entertainment
+                        </h3>
+
                         <p>
                             Creative work, storytelling, animation,
                             and future entertainment formats.
                         </p>
+
                     </article>
 
-                    <article class="feature-card">
-                        <h3>Media</h3>
+
+                    <!-- CARD -->
+                    <article class="glass-card feature-card">
+
+                        <div class="card-icon">
+                            <span>▶</span>
+                        </div>
+
+                        <h3>
+                            Media
+                        </h3>
+
                         <p>
                             Content, storytelling systems,
                             and media properties.
                         </p>
+
                     </article>
 
-                    <article class="feature-card">
-                        <h3>Technology</h3>
+
+                    <!-- CARD -->
+                    <article class="glass-card feature-card">
+
+                        <div class="card-icon">
+                            <span>◈</span>
+                        </div>
+
+                        <h3>
+                            Technology
+                        </h3>
+
                         <p>
-                            Software, technical systems,
-                            AI, and automation.
+                            Software, AI, automation,
+                            and technical systems.
                         </p>
+
                     </article>
 
-                    <article class="feature-card">
-                        <h3>Intellectual Property</h3>
+
+                    <!-- CARD -->
+                    <article class="glass-card feature-card">
+
+                        <div class="card-icon">
+                            <span>◎</span>
+                        </div>
+
+                        <h3>
+                            Intellectual Property
+                        </h3>
+
                         <p>
                             Original characters, worlds, stories,
                             franchises, and creative properties.
                         </p>
+
                     </article>
 
                 </div>
 
-                <div class="text-block">
+
+                <!-- DIRECTION -->
+                <div class="direction-card glass-card">
+
+                    <span>Create</span>
+                    <b>→</b>
+                    <span>Develop</span>
+                    <b>→</b>
+                    <span>Operate</span>
+                    <b>→</b>
+                    <span>Own</span>
+                    <b>→</b>
+                    <span>Expand</span>
+                    <b>→</b>
+                    <span>Adapt</span>
+                    <b>→</b>
+                    <span>Preserve</span>
+                    <b>→</b>
+                    <span>Build Again</span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             APEX
+             ================================================= -->
+
+        <section id="apex" class="section section-light apex-section">
+
+            <div class="section-container apex-grid">
+
+                <div class="apex-copy">
+
+                    <p class="section-label">
+                        02 — Apex Universal Studios™
+                    </p>
+
+                    <h2>
+                        The company I'm building.
+                    </h2>
+
+                    <p>
+                        <strong>Apex Universal Studios™</strong> is the
+                        company I founded and lead.
+                    </p>
+
+                    <p>
+                        What began from an interest in animation developed
+                        into a broader company vision combining
+                        entertainment, media, technology, artificial
+                        intelligence, automation, business, intellectual
+                        property, and creative development.
+                    </p>
 
                     <p>
                         Apex is not intended to remain a traditional
                         animation studio.
                     </p>
 
-                    <p>
-                        The long-term direction is to build an
-                        interconnected creative and technology ecosystem
-                        capable of creating original intellectual property,
-                        developing businesses around that IP,
-                        using technology intelligently, and expanding
-                        into new mediums and opportunities.
-                    </p>
+                    <a href="#apex-origin" class="glass-button dark-button">
+                        Learn more about Apex
+                        <span>→</span>
+                    </a>
+
+                </div>
+
+
+                <div class="apex-visual-stack">
+
+                    <!-- COMPANY LOGO PLACEHOLDER -->
+                    <div class="image-placeholder apex-logo-placeholder">
+
+                        <div class="placeholder-icon">
+                            <span></span>
+                        </div>
+
+                        <p>
+                            Your company logo goes here
+                        </p>
+
+                        <small>
+                            Add your logo to the repository
+                        </small>
+
+                    </div>
+
+
+                    <!-- SECONDARY VISUAL PLACEHOLDER -->
+                    <div class="image-placeholder secondary-visual-placeholder">
+
+                        <div class="placeholder-icon">
+                            <span></span>
+                        </div>
+
+                        <small>
+                            Future Apex visual
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- APEX CAPABILITIES -->
+
+            <div class="section-container apex-capabilities">
+
+                <div class="mini-card">
+
+                    <span class="mini-number">01</span>
+
+                    <strong>
+                        Entertainment
+                    </strong>
+
+                </div>
+
+                <div class="mini-card">
+
+                    <span class="mini-number">02</span>
+
+                    <strong>
+                        Media
+                    </strong>
+
+                </div>
+
+                <div class="mini-card">
+
+                    <span class="mini-number">03</span>
+
+                    <strong>
+                        Technology
+                    </strong>
+
+                </div>
+
+                <div class="mini-card">
+
+                    <span class="mini-number">04</span>
+
+                    <strong>
+                        Intellectual Property
+                    </strong>
 
                 </div>
 
@@ -292,89 +514,148 @@
         </section>
 
 
-        <!-- =========================
+        <!-- =================================================
              ABOUT
-        ========================== -->
+             ================================================= -->
 
-        <section id="about" class="section section-light">
+        <section id="about" class="section section-dark about-section">
 
             <div class="section-container">
 
-                <p class="eyebrow">
-                    03 — ABOUT FARUQ
-                </p>
+                <div class="section-heading">
 
-                <h2>
-                    The story so far.
-                </h2>
-
-                <div class="text-block">
-
-                    <p>
-                        Faruq Ayomide Ojolowo was born on
-                        <strong>28 June 2003</strong>
-                        in Iragbiji, Osun State, Nigeria.
+                    <p class="section-label">
+                        03 — About Faruq
                     </p>
 
-                    <p>
-                        His early interests were rooted in
-                        <strong>art and animation</strong>,
-                        with art and music becoming important influences
-                        on his creative identity.
+                    <h2>
+                        The story so far.
+                    </h2>
+
+                </div>
+
+
+                <div class="about-grid">
+
+                    <div class="about-copy">
+
+                        <p>
+                            Faruq Ayomide Ojolowo was born on
+                            <strong>28 June 2003</strong> in
+                            <strong>Iragbiji, Osun State, Nigeria.</strong>
+                        </p>
+
+                        <p>
+                            His early interests were rooted in
+                            <strong>art and animation</strong>, with art
+                            and music becoming important influences on
+                            his creative identity.
+                        </p>
+
+                        <p>
+                            As he grew older, those interests expanded
+                            toward technology and entrepreneurship.
+                        </p>
+
+                        <p>
+                            One early influence was his older brother's
+                            work in web development and software
+                            engineering, including his experience owning
+                            a technology company.
+                        </p>
+
+                    </div>
+
+
+                    <!-- YOUR PHOTO PLACEHOLDER -->
+                    <div class="image-placeholder about-photo-placeholder">
+
+                        <div class="placeholder-icon">
+                            <span></span>
+                        </div>
+
+                        <p>
+                            Your photo goes here
+                        </p>
+
+                        <small>
+                            Add your image to the repository
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <!-- UNIVERSITY -->
+
+                <div class="story-block">
+
+                    <p class="section-label">
+                        Education
                     </p>
 
-                    <p>
-                        As he grew older, those interests expanded
-                        toward technology and entrepreneurship.
+                    <h3>
+                        Finding the intersection.
+                    </h3>
+
+                    <div class="story-columns">
+
+                        <div>
+
+                            <p>
+                                In <strong>2023</strong>, Faruq began his
+                                university education at the
+                                <strong>Federal University of Technology
+                                Akure (FUTA).</strong>
+                            </p>
+
+                            <p>
+                                He initially studied
+                                <strong>Physics</strong>, but eventually
+                                recognized that it did not align with the
+                                direction he wanted to pursue.
+                            </p>
+
+                        </div>
+
+                        <div>
+
+                            <p>
+                                He changed his academic direction to
+                                <strong>Business Information Technology
+                                (BIT)</strong>, returning to 200L and
+                                adding an additional year to his
+                                university journey.
+                            </p>
+
+                            <p>
+                                His expected graduation year is
+                                <strong>2028.</strong>
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- DEVELOPMENT -->
+
+                <div class="story-block">
+
+                    <p class="section-label">
+                        Creative & Technical Development
                     </p>
 
-                    <p>
-                        One early influence was his older brother's work
-                        in web development and software engineering,
-                        including his experience owning a technology
-                        company. Seeing technology being turned into
-                        something practical and commercial gave Faruq
-                        an early understanding of what could be built
-                        with it.
-                    </p>
-
-                    <h3>University</h3>
+                    <h3>
+                        Developing across disciplines.
+                    </h3>
 
                     <p>
-                        In <strong>2023</strong>, Faruq began his
-                        university education at the
-                        <strong>Federal University of Technology Akure (FUTA)</strong>.
-                    </p>
-
-                    <p>
-                        He initially studied <strong>Physics</strong>,
-                        but eventually recognized that it did not align
-                        with the direction he wanted to pursue.
-                    </p>
-
-                    <p>
-                        He changed his academic direction to
-                        <strong>Business Information Technology (BIT)</strong>,
-                        returning to 200L and adding an additional year
-                        to his university journey.
-                    </p>
-
-                    <p>
-                        His academic path reflects a broader interest
-                        in the intersection of technology, business,
-                        and creative work.
-                    </p>
-
-                    <p>
-                        His expected graduation year is
-                        <strong>2028</strong>.
-                    </p>
-
-                    <h3>Finding the intersection</h3>
-
-                    <p>
-                        During his early university years, exposure to
-                        a <strong>UI/UX course</strong> strengthened his
+                        During his early university years, exposure to a
+                        <strong>UI/UX course</strong> strengthened his
                         interest in the relationship between technology,
                         design, and creative production.
                     </p>
@@ -384,32 +665,31 @@
                         self-directed.
                     </p>
 
-                    <ul class="skill-list">
-                        <li>Animation</li>
-                        <li>Visual graphics design</li>
-                        <li>Digital art</li>
-                        <li>Technology</li>
-                        <li>AI</li>
-                        <li>Automation</li>
-                        <li>Software</li>
-                        <li>Programming</li>
-                        <li>Business</li>
-                        <li>Management</li>
-                        <li>Art direction</li>
-                        <li>Writing</li>
-                        <li>Worldbuilding</li>
-                        <li>Character development</li>
-                        <li>Story development</li>
-                    </ul>
+
+                    <div class="tag-cloud">
+
+                        <span>Animation</span>
+                        <span>Visual Graphics Design</span>
+                        <span>Digital Art</span>
+                        <span>Technology</span>
+                        <span>AI</span>
+                        <span>Automation</span>
+                        <span>Software</span>
+                        <span>Programming</span>
+                        <span>Business</span>
+                        <span>Management</span>
+                        <span>Art Direction</span>
+                        <span>Writing</span>
+                        <span>Worldbuilding</span>
+                        <span>Character Development</span>
+                        <span>Story Development</span>
+
+                    </div>
 
                     <p>
-                        Animation eventually became the creative
-                        direction through which many of these interests
-                        began to converge.
-                    </p>
-
-                    <p>
-                        That eventually led to Apex.
+                        Animation eventually became the creative direction
+                        through which many of these interests began to
+                        converge.
                     </p>
 
                 </div>
@@ -419,28 +699,33 @@
         </section>
 
 
-        <!-- =========================
-             ORIGIN OF APEX
-        ========================== -->
+        <!-- =================================================
+             APEX ORIGIN
+             ================================================= -->
 
-        <section class="section">
+        <section id="apex-origin" class="section section-dark origin-section">
 
-            <div class="section-container narrow">
+            <div class="section-container origin-grid">
 
-                <p class="eyebrow">
-                    ORIGIN OF APEX
-                </p>
+                <div>
 
-                <h2>
-                    From animation to an ecosystem.
-                </h2>
+                    <p class="section-label">
+                        Origin of Apex
+                    </p>
 
-                <div class="text-block">
+                    <h2>
+                        From animation to an ecosystem.
+                    </h2>
+
+                </div>
+
+
+                <div class="origin-copy">
 
                     <p>
                         Before Apex, Faruq explored different interests
-                        and ideas while trying to understand the kind
-                        of work and future he wanted to build.
+                        and ideas while trying to understand the kind of
+                        work and future he wanted to build.
                     </p>
 
                     <p>
@@ -449,32 +734,21 @@
 
                     <p>
                         It emerged from interests that had already been
-                        developing across <strong>animation, creativity,
-                        technology, AI, automation, business,
-                        and intellectual property.</strong>
+                        developing across animation, creativity,
+                        technology, AI, automation, business, and
+                        intellectual property.
                     </p>
 
-                    <p>
-                        What initially grew from an interest in animation
-                        became something broader:
-                    </p>
-
-                    <blockquote>
-                        A company capable of creating worlds,
-                        developing intellectual property,
-                        building businesses around that IP,
-                        and using technology to expand what is possible.
+                    <blockquote class="glass-quote">
+                        A company capable of creating worlds, developing
+                        intellectual property, building businesses around
+                        that IP, and using technology to expand what is
+                        possible.
                     </blockquote>
 
                     <p>
                         That became
-                        <strong>Apex Universal Studios™</strong>.
-                    </p>
-
-                    <p>
-                        The company evolved from an animation-focused
-                        concept into a broader parent company and
-                        ecosystem.
+                        <strong>Apex Universal Studios™.</strong>
                     </p>
 
                 </div>
@@ -484,127 +758,184 @@
         </section>
 
 
-        <!-- =========================
-             PHILOSOPHY
-        ========================== -->
+        <!-- =================================================
+             FOUNDER PHILOSOPHY
+             ================================================= -->
 
-        <section id="philosophy" class="section section-dark">
+        <section id="ideas" class="section section-dark philosophy-section">
 
             <div class="section-container">
 
-                <p class="eyebrow">
-                    04 — FOUNDER PHILOSOPHY
-                </p>
+                <div class="section-heading split-heading">
 
-                <h2>
-                    How I think about building.
-                </h2>
+                    <div>
 
-                <div class="text-block">
+                        <p class="section-label">
+                            04 — Founder Philosophy
+                        </p>
 
-                    <p>
-                        I believe a founder should not only have an idea.
-                    </p>
+                        <h2>
+                            How I think about building.
+                        </h2>
 
-                    <p>
-                        A founder should develop the ability to
-                        <strong>
-                            understand it, build it, improve it,
-                            and carry it forward.
-                        </strong>
-                    </p>
+                    </div>
 
-                    <p>
-                        For me, creativity, technology, business,
-                        and intellectual property aren't separate interests.
-                        They are parts of the same direction.
-                    </p>
+                    <div>
+
+                        <p>
+                            I believe a founder should not only have an idea.
+                        </p>
+
+                        <p>
+                            A founder should develop the ability to
+                            <strong>understand it, build it, improve it,
+                            and carry it forward.</strong>
+                        </p>
+
+                    </div>
 
                 </div>
 
+
                 <div class="principles-grid">
 
-                    <article>
+                    <article class="glass-card principle-card">
+
+                        <span>01</span>
+
                         <h3>Originality</h3>
+
                         <p>
                             Create things with their own identity.
                         </p>
+
                     </article>
 
-                    <article>
+
+                    <article class="glass-card principle-card">
+
+                        <span>02</span>
+
                         <h3>Independence</h3>
+
                         <p>
                             Think, create, build, and decide independently
                             while collaborating effectively.
                         </p>
+
                     </article>
 
-                    <article>
+
+                    <article class="glass-card principle-card">
+
+                        <span>03</span>
+
                         <h3>Ownership</h3>
+
                         <p>
-                            Take responsibility for company, IP,
-                            projects, decisions, capabilities,
-                            and direction.
+                            Take responsibility for company, IP, projects,
+                            decisions, capabilities, and direction.
                         </p>
+
                     </article>
 
-                    <article>
+
+                    <article class="glass-card principle-card">
+
+                        <span>04</span>
+
                         <h3>Excellence</h3>
+
                         <p>
                             Care about quality, craft, detail,
                             and continuous improvement.
                         </p>
+
                     </article>
 
-                    <article>
+
+                    <article class="glass-card principle-card">
+
+                        <span>05</span>
+
                         <h3>Innovation</h3>
+
                         <p>
-                            Use technology intelligently.
+                            Use technology intelligently to expand
+                            what is possible.
                         </p>
+
                     </article>
 
-                    <article>
-                        <h3>Long-term thinking</h3>
+
+                    <article class="glass-card principle-card">
+
+                        <span>06</span>
+
+                        <h3>Long-term Thinking</h3>
+
                         <p>
-                            Build things that develop and compound
+                            Build things that develop and create value
                             over time.
                         </p>
+
                     </article>
 
-                    <article>
+
+                    <article class="glass-card principle-card">
+
+                        <span>07</span>
+
                         <h3>Ambition</h3>
+
                         <p>
                             Pursue significant creative, technological,
                             and business capabilities.
                         </p>
+
                     </article>
 
-                    <article>
+
+                    <article class="glass-card principle-card">
+
+                        <span>08</span>
+
                         <h3>Freedom</h3>
+
                         <p>
-                            Explore different mediums, industries,
-                            technologies, ideas, and business models.
+                            Explore mediums, industries, technologies,
+                            ideas, and business models.
                         </p>
+
                     </article>
 
-                    <article>
+
+                    <article class="glass-card principle-card">
+
+                        <span>09</span>
+
                         <h3>Discipline</h3>
+
                         <p>
                             Ambition requires execution and consistency.
                         </p>
+
                     </article>
 
                 </div>
 
-                <div class="principle-statement">
+
+                <div class="principle-statement glass-card">
+
+                    <span class="quote-mark">“</span>
 
                     <p>
-                        Create something original.
-                        Build it properly.
-                        Own what is built.
-                        Keep learning.
-                        Continue expanding what is possible.
+                        Create something original. Build it properly.
+                        Own what is built. Keep learning. Continue
+                        expanding what is possible.
                     </p>
+
+                    <span class="quote-mark quote-end">”</span>
 
                 </div>
 
@@ -613,92 +944,125 @@
         </section>
 
 
-        <!-- =========================
-             DEVELOPMENT
-        ========================== -->
+        <!-- =================================================
+             FOUNDER DEVELOPMENT
+             ================================================= -->
 
-        <section class="section">
+        <section class="section section-light development-section">
 
             <div class="section-container">
 
-                <p class="eyebrow">
-                    05 — FOUNDER DEVELOPMENT
-                </p>
+                <div class="section-heading">
 
-                <h2>
-                    Building the founder behind the company.
-                </h2>
-
-                <div class="text-block">
-
-                    <p>
-                        Building Apex is also part of my development
-                        as a founder.
+                    <p class="section-label">
+                        05 — Founder Development
                     </p>
 
-                    <p>
-                        I'm not trying to become only an animator,
-                        technologist, businessman, or executive.
-                    </p>
+                    <h2>
+                        Building the founder behind the company.
+                    </h2>
 
-                    <p>
-                        I'm developing toward becoming a
-                        <strong>multidisciplinary founder</strong>
-                        who can understand enough of different
-                        disciplines to make informed decisions,
-                        work with specialists, recognize opportunities,
-                        and build systems around a larger vision.
+                    <p class="heading-description">
+                        I'm developing toward becoming a multidisciplinary
+                        founder who can understand enough of different
+                        disciplines to make informed decisions, work with
+                        specialists, recognize opportunities, and build
+                        systems around a larger vision.
                     </p>
 
                 </div>
 
+
                 <div class="development-grid">
 
-                    <article>
-                        <h3>Creative</h3>
+                    <article class="development-card">
+
+                        <div class="card-icon">
+                            ✦
+                        </div>
+
+                        <h3>
+                            Creative
+                        </h3>
+
                         <p>
                             Animation · Visual Design · Art Direction ·
                             Writing · Worldbuilding · Character Development ·
                             Story Development
                         </p>
+
                     </article>
 
-                    <article>
-                        <h3>Technology</h3>
+
+                    <article class="development-card">
+
+                        <div class="card-icon">
+                            ◈
+                        </div>
+
+                        <h3>
+                            Technology
+                        </h3>
+
                         <p>
                             AI · Automation · Software · Programming ·
                             Technical Systems
                         </p>
+
                     </article>
 
-                    <article>
-                        <h3>Business</h3>
+
+                    <article class="development-card">
+
+                        <div class="card-icon">
+                            ↗
+                        </div>
+
+                        <h3>
+                            Business
+                        </h3>
+
                         <p>
                             Strategy · Management · Operations ·
-                            Entrepreneurship · Intellectual Property
+                            Entrepreneurship · IP
                         </p>
+
                     </article>
 
-                    <article>
-                        <h3>Leadership</h3>
+
+                    <article class="development-card">
+
+                        <div class="card-icon">
+                            ◎
+                        </div>
+
+                        <h3>
+                            Leadership
+                        </h3>
+
                         <p>
                             Decision-making · Direction · Delegation ·
-                            Standards · Coordination · Long-term thinking
+                            Standards · Coordination · Long-term Thinking
                         </p>
+
                     </article>
 
                 </div>
 
-                <div class="direction">
 
-                    <p class="eyebrow">
-                        DEVELOPMENT LOOP
-                    </p>
+                <div class="development-loop">
 
-                    <p class="direction-line">
-                        Learn → Experiment → Build → Reflect
-                        → Improve → Expand
-                    </p>
+                    <span>Learn</span>
+                    <b>→</b>
+                    <span>Experiment</span>
+                    <b>→</b>
+                    <span>Build</span>
+                    <b>→</b>
+                    <span>Reflect</span>
+                    <b>→</b>
+                    <span>Improve</span>
+                    <b>→</b>
+                    <span>Expand</span>
 
                 </div>
 
@@ -707,220 +1071,342 @@
         </section>
 
 
-        <!-- =========================
+        <!-- =================================================
              PROJECTS
-        ========================== -->
+             ================================================= -->
 
-        <section id="projects" class="section section-light">
+        <section id="projects" class="section section-dark projects-section">
 
             <div class="section-container">
 
-                <p class="eyebrow">
-                    06 — PROJECTS & WORK
-                </p>
+                <div class="section-heading split-heading">
 
-                <h2>
-                    What I've actually worked on.
-                </h2>
+                    <div>
 
-                <div class="text-block">
+                        <p class="section-label">
+                            06 — Projects & Work
+                        </p>
+
+                        <h2>
+                            What I've actually worked on.
+                        </h2>
+
+                    </div>
 
                     <p>
-                        My projects represent the practical side of
-                        my development as a founder and creative builder.
-                    </p>
-
-                    <p>
-                        At this stage, the record is intentionally concise.
-                        I don't want future ideas to be presented as
-                        completed projects.
+                        My projects represent the practical side of my
+                        development as a founder and creative builder.
                     </p>
 
                 </div>
 
-                <div class="project-list">
 
-                    <article class="project-card">
+                <div class="project-grid">
 
-                        <div class="project-meta">
-                            ACTIVE
+                    <!-- APEX PROJECT -->
+                    <article class="project-card glass-card project-featured">
+
+                        <!-- PROJECT IMAGE PLACEHOLDER -->
+                        <div class="project-image-placeholder">
+
+                            <div class="placeholder-icon">
+                                <span></span>
+                            </div>
+
+                            <small>
+                                Apex project visual
+                            </small>
+
                         </div>
 
-                        <h3>
-                            Apex Universal Studios™
-                        </h3>
+                        <div class="project-content">
 
-                        <p>
-                            My primary current company and the largest
-                            documented project associated with my work.
-                        </p>
+                            <span class="project-status">
+                                Active
+                            </span>
 
-                        <p>
-                            Apex brings together entertainment, media,
-                            technology, AI, automation, business,
-                            intellectual property, and creative development.
-                        </p>
+                            <h3>
+                                Apex Universal Studios™
+                            </h3>
+
+                            <p>
+                                My primary current company and the largest
+                                documented project associated with my work.
+                            </p>
+
+                        </div>
 
                     </article>
 
 
-                    <article class="project-card">
+                    <!-- CREATIVE DEVELOPMENT -->
+                    <article class="project-card glass-card">
 
-                        <div class="project-meta">
-                            CREATIVE DEVELOPMENT
+                        <div class="project-image-placeholder">
+
+                            <div class="placeholder-icon">
+                                <span></span>
+                            </div>
+
+                            <small>
+                                Creative work visual
+                            </small>
+
                         </div>
 
-                        <h3>
-                            Creative Development
-                        </h3>
+                        <div class="project-content">
 
-                        <p>
-                            Animation exploration, visual graphics design,
-                            digital art, art-related creative work,
-                            sketching, and painting.
-                        </p>
+                            <span class="project-status">
+                                Creative Development
+                            </span>
+
+                            <h3>
+                                Creative Development
+                            </h3>
+
+                            <p>
+                                Animation exploration, visual graphics
+                                design, digital art, sketching, and painting.
+                            </p>
+
+                        </div>
 
                     </article>
 
 
-                    <article class="project-card">
+                    <!-- TECHNOLOGY -->
+                    <article class="project-card glass-card">
 
-                        <div class="project-meta">
-                            TECHNOLOGY & AI
+                        <div class="project-image-placeholder">
+
+                            <div class="placeholder-icon">
+                                <span></span>
+                            </div>
+
+                            <small>
+                                Technology visual
+                            </small>
+
                         </div>
 
-                        <h3>
-                            Technology & AI
-                        </h3>
+                        <div class="project-content">
 
-                        <p>
-                            AI, automation, technical systems,
-                            software, and programming.
-                        </p>
+                            <span class="project-status">
+                                Technology & AI
+                            </span>
+
+                            <h3>
+                                Technology & AI
+                            </h3>
+
+                            <p>
+                                AI, automation, technical systems, software,
+                                and programming.
+                            </p>
+
+                        </div>
 
                     </article>
 
 
-                    <article class="project-card">
+                    <!-- PAST EXPERIMENT -->
+                    <article class="project-card glass-card">
 
-                        <div class="project-meta">
-                            PAST EXPERIMENT
+                        <div class="project-image-placeholder">
+
+                            <div class="placeholder-icon">
+                                <span></span>
+                            </div>
+
+                            <small>
+                                Experiment visual
+                            </small>
+
                         </div>
 
-                        <h3>
-                            AI Influencing
-                        </h3>
+                        <div class="project-content">
 
-                        <p>
-                            A past experiment that did not continue
-                            as a lasting project, but became part of
-                            my development and deepened my understanding
-                            of AI.
-                        </p>
+                            <span class="project-status">
+                                Past Experiment
+                            </span>
+
+                            <h3>
+                                AI Influencing
+                            </h3>
+
+                            <p>
+                                A past experiment that did not continue as
+                                a lasting project, but became part of my
+                                development and understanding of AI.
+                            </p>
+
+                        </div>
 
                     </article>
 
                 </div>
 
-                <blockquote>
-                    Some experiments become projects.
-                    Some projects become companies.
-                    Some experiments simply teach you something.
-                    I want this site to document that distinction honestly.
-                </blockquote>
+
+                <div class="editorial-note glass-card">
+
+                    <p>
+                        Some experiments become projects. Some projects
+                        become companies. Some experiments simply teach
+                        you something. I want this site to document that
+                        distinction honestly.
+                    </p>
+
+                </div>
 
             </div>
 
         </section>
 
 
-        <!-- =========================
+        <!-- =================================================
              MILESTONES
-        ========================== -->
+             ================================================= -->
 
-        <section class="section">
+        <section class="section section-light milestones-section">
 
-            <div class="section-container">
+            <div class="section-container milestones-grid">
 
-                <p class="eyebrow">
-                    07 — MILESTONES
-                </p>
+                <div>
 
-                <h2>
-                    Building the foundation.
-                </h2>
+                    <p class="section-label">
+                        07 — Milestones
+                    </p>
 
-                <div class="text-block">
+                    <h2>
+                        Building the foundation.
+                    </h2>
 
                     <p>
                         My achievements are still being built.
                     </p>
 
-                    <p>
-                        At this stage, the most meaningful milestones
-                        are the concrete steps I've taken to develop
-                        myself, change direction when necessary,
-                        and begin building the company and capabilities
-                        behind my long-term ambitions.
-                    </p>
-
                 </div>
+
 
                 <div class="timeline">
 
-                    <article>
-                        <span>2023</span>
-                        <h3>University</h3>
-                        <p>
-                            Began university at the Federal University
-                            of Technology Akure.
-                        </p>
+                    <article class="timeline-item">
+
+                        <span class="timeline-year">
+                            2023
+                        </span>
+
+                        <div>
+                            <h3>
+                                University
+                            </h3>
+
+                            <p>
+                                Began university at FUTA.
+                            </p>
+                        </div>
+
                     </article>
 
-                    <article>
-                        <span>ACADEMIC TRANSITION</span>
-                        <h3>Changed Direction</h3>
-                        <p>
-                            Moved from Physics to Business Information
-                            Technology.
-                        </p>
+
+                    <article class="timeline-item">
+
+                        <span class="timeline-year">
+                            01
+                        </span>
+
+                        <div>
+                            <h3>
+                                Academic Transition
+                            </h3>
+
+                            <p>
+                                Moved from Physics to Business Information
+                                Technology.
+                            </p>
+                        </div>
+
                     </article>
 
-                    <article>
-                        <span>CREATIVE DEVELOPMENT</span>
-                        <h3>Built Creative Capabilities</h3>
-                        <p>
-                            Developed capabilities across animation,
-                            visual design, digital art, and related
-                            creative disciplines.
-                        </p>
+
+                    <article class="timeline-item">
+
+                        <span class="timeline-year">
+                            02
+                        </span>
+
+                        <div>
+                            <h3>
+                                Creative Development
+                            </h3>
+
+                            <p>
+                                Built capabilities across animation,
+                                visual design, digital art, and related
+                                creative disciplines.
+                            </p>
+                        </div>
+
                     </article>
 
-                    <article>
-                        <span>TECHNICAL DEVELOPMENT</span>
-                        <h3>Expanded Technical Knowledge</h3>
-                        <p>
-                            Developed knowledge across technology,
-                            AI, automation, software, and programming.
-                        </p>
+
+                    <article class="timeline-item">
+
+                        <span class="timeline-year">
+                            03
+                        </span>
+
+                        <div>
+                            <h3>
+                                Technical Development
+                            </h3>
+
+                            <p>
+                                Developed knowledge across technology,
+                                AI, automation, software, and programming.
+                            </p>
+                        </div>
+
                     </article>
 
-                    <article>
-                        <span>ENTREPRENEURSHIP</span>
-                        <h3>Founded Apex Universal Studios™</h3>
-                        <p>
-                            Began building the company and the broader
-                            ecosystem behind the long-term vision.
-                        </p>
+
+                    <article class="timeline-item">
+
+                        <span class="timeline-year">
+                            04
+                        </span>
+
+                        <div>
+                            <h3>
+                                Entrepreneurship
+                            </h3>
+
+                            <p>
+                                Founded Apex Universal Studios™.
+                            </p>
+                        </div>
+
                     </article>
 
-                    <article>
-                        <span>CURRENT STAGE</span>
-                        <h3>Building the Foundation</h3>
-                        <p>
-                            Completing university, developing capabilities,
-                            building Apex, and working toward the larger vision.
-                        </p>
+
+                    <article class="timeline-item">
+
+                        <span class="timeline-year">
+                            Now
+                        </span>
+
+                        <div>
+                            <h3>
+                                Current Stage
+                            </h3>
+
+                            <p>
+                                Building the foundation, completing
+                                university, developing capabilities,
+                                and building Apex.
+                            </p>
+                        </div>
+
                     </article>
 
                 </div>
@@ -930,27 +1416,32 @@
         </section>
 
 
-        <!-- =========================
+        <!-- =================================================
              LONG-TERM VISION
-        ========================== -->
+             ================================================= -->
 
-        <section class="section section-dark">
+        <section id="vision" class="section section-dark vision-section">
 
-            <div class="section-container narrow">
+            <div class="section-container vision-grid">
 
-                <p class="eyebrow">
-                    08 — LONG-TERM VISION
-                </p>
+                <div>
 
-                <h2>
-                    Build something that outlasts individual projects.
-                </h2>
+                    <p class="section-label">
+                        08 — Long-term Vision
+                    </p>
 
-                <div class="text-block">
+                    <h2>
+                        Build something that outlasts individual projects.
+                    </h2>
+
+                </div>
+
+
+                <div class="vision-copy">
 
                     <p>
-                        I want to build something that outlasts
-                        individual projects.
+                        I want to build something that outlasts individual
+                        projects.
                     </p>
 
                     <p>
@@ -962,21 +1453,31 @@
                         <strong>continuing to make things.</strong>
                     </p>
 
+
+                    <div class="vision-chain">
+
+                        <span>Character</span>
+                        <b>→</b>
+                        <span>Story</span>
+                        <b>→</b>
+                        <span>World</span>
+                        <b>→</b>
+                        <span>Franchise</span>
+
+                    </div>
+
+
                     <p>
-                        A character can become a story.
-                        A story can become a world.
-                        A world can become a franchise.
-                        An idea can become a business.
-                        Technology can make the ecosystem more capable.
-                        And the company can continue developing as new
-                        opportunities emerge.
+                        An idea can become a business. Technology can make
+                        the ecosystem more capable. And the company can
+                        continue developing as new opportunities emerge.
                     </p>
 
                     <p>
                         The ultimate objective is to create intellectual
-                        property, businesses, technology, systems,
-                        and creative work capable of producing value
-                        over the long term.
+                        property, businesses, technology, systems, and
+                        creative work capable of producing value over the
+                        long term.
                     </p>
 
                 </div>
@@ -986,55 +1487,79 @@
         </section>
 
 
-        <!-- =========================
+        <!-- =================================================
              CURRENTLY
-        ========================== -->
+             ================================================= -->
 
-        <section class="section">
+        <section class="section section-light current-section">
 
-            <div class="section-container">
+            <div class="section-container current-grid">
 
-                <p class="eyebrow">
-                    09 — CURRENTLY
-                </p>
+                <div class="current-copy">
 
-                <h2>
-                    Right now.
-                </h2>
+                    <p class="section-label">
+                        09 — Currently
+                    </p>
 
-                <div class="text-block">
+                    <h2>
+                        Right now.
+                    </h2>
 
                     <p>
-                        I'm in the
-                        <strong>foundation-building stage.</strong>
+                        I'm in the <strong>foundation-building stage.</strong>
                     </p>
 
                     <p>
                         My priorities are straightforward:
                     </p>
 
+
+                    <ul class="priority-list">
+
+                        <li>
+                            <span>01</span>
+                            Build Apex.
+                        </li>
+
+                        <li>
+                            <span>02</span>
+                            Complete university.
+                        </li>
+
+                        <li>
+                            <span>03</span>
+                            Develop my capabilities.
+                        </li>
+
+                        <li>
+                            <span>04</span>
+                            Learn continuously.
+                        </li>
+
+                        <li>
+                            <span>05</span>
+                            Turn ideas into real work.
+                        </li>
+
+                    </ul>
+
                 </div>
 
-                <div class="current-priorities">
 
-                    <div>Build Apex.</div>
-                    <div>Complete university.</div>
-                    <div>Develop my capabilities.</div>
-                    <div>Learn continuously.</div>
-                    <div>Turn ideas into real work.</div>
+                <!-- CURRENT VISUAL PLACEHOLDER -->
+                <div class="image-placeholder current-visual-placeholder">
 
-                </div>
-
-                <div class="text-block">
+                    <div class="placeholder-icon">
+                        <span></span>
+                    </div>
 
                     <p>
-                        The larger ambitions are ahead.
+                        Future lifestyle / work image
                     </p>
 
-                    <p>
-                        The work happening now is about becoming
-                        capable enough to pursue them.
-                    </p>
+                    <small>
+                        Add your image to the repository
+                    </small>
 
                 </div>
 
@@ -1043,23 +1568,34 @@
         </section>
 
 
-        <!-- =========================
+        <!-- =================================================
              PERSONAL INTERESTS
-        ========================== -->
+             ================================================= -->
 
-        <section class="section section-light">
+        <section class="section section-light interests-section">
 
-            <div class="section-container">
+            <div class="section-container interests-grid">
 
-                <p class="eyebrow">
-                    OUTSIDE BUILDING
-                </p>
+                <div>
 
-                <h2>
-                    Personal interests.
-                </h2>
+                    <p class="section-label">
+                        Outside Building
+                    </p>
 
-                <div class="interest-list">
+                    <h2>
+                        Personal interests.
+                    </h2>
+
+                    <p>
+                        Outside building, I'm drawn to things combining
+                        culture, design, technology, storytelling, and
+                        human creativity.
+                    </p>
+
+                </div>
+
+
+                <div class="interest-pills">
 
                     <span>Afrobeats</span>
                     <span>Wizkid</span>
@@ -1071,13 +1607,21 @@
 
                 </div>
 
-                <div class="text-block">
+
+                <!-- INTEREST IMAGE PLACEHOLDER -->
+                <div class="image-placeholder interest-image-placeholder">
+
+                    <div class="placeholder-icon">
+                        <span></span>
+                    </div>
 
                     <p>
-                        More broadly, I'm drawn to things combining
-                        culture, design, technology, storytelling,
-                        and human creativity.
+                        Interests image goes here
                     </p>
+
+                    <small>
+                        Add your image to the repository
+                    </small>
 
                 </div>
 
@@ -1086,28 +1630,44 @@
         </section>
 
 
-        <!-- =========================
+        <!-- =================================================
              MEDIA
-        ========================== -->
+             ================================================= -->
 
-        <section id="media" class="section">
+        <section id="media" class="section section-dark media-section">
 
-            <div class="section-container narrow">
+            <div class="section-container media-grid">
 
-                <p class="eyebrow">
-                    MEDIA
-                </p>
+                <div>
 
-                <h2>
-                    A space for future work.
-                </h2>
+                    <p class="section-label">
+                        Media
+                    </p>
 
-                <div class="text-block">
+                    <h2>
+                        A space for future work.
+                    </h2>
 
                     <p>
-                        This section is reserved for future media,
-                        interviews, appearances, press materials,
-                        and other public-facing content.
+                        Reserved for future interviews, appearances,
+                        press materials, features, and other public media.
+                    </p>
+
+                </div>
+
+
+                <div class="glass-card media-placeholder">
+
+                    <div class="card-icon">
+                        ◌
+                    </div>
+
+                    <h3>
+                        Media
+                    </h3>
+
+                    <p>
+                        Future media content will appear here.
                     </p>
 
                 </div>
@@ -1117,32 +1677,46 @@
         </section>
 
 
-        <!-- =========================
+        <!-- =================================================
              CONTACT
-        ========================== -->
+             ================================================= -->
 
-        <section id="contact" class="section section-dark">
+        <section id="contact" class="section section-dark contact-section">
 
-            <div class="section-container narrow">
+            <div class="section-container contact-grid">
 
-                <p class="eyebrow">
-                    CONTACT
-                </p>
+                <div>
 
-                <h2>
-                    Let's talk.
-                </h2>
+                    <p class="section-label">
+                        Contact
+                    </p>
 
-                <div class="text-block">
+                    <h2>
+                        Let's talk.
+                    </h2>
 
                     <p>
                         For business, creative, technology,
                         collaboration, or professional enquiries.
                     </p>
 
-                    <p class="muted">
+                </div>
+
+
+                <!-- CONTACT PLACEHOLDER -->
+                <div class="glass-card contact-placeholder">
+
+                    <div class="card-icon">
+                        @
+                    </div>
+
+                    <p>
                         Public contact details will be added here.
                     </p>
+
+                    <small>
+                        Contact information will be connected when ready.
+                    </small>
 
                 </div>
 
@@ -1153,25 +1727,29 @@
     </main>
 
 
-    <!-- =========================
+    <!-- =====================================================
          FOOTER
-    ========================== -->
+         ===================================================== -->
 
     <footer class="site-footer">
 
         <div class="footer-container">
 
-            <div>
+            <div class="footer-brand">
+
                 <strong>
-                    Faruq Ayomide Ojolowo
+                    FARUQ
                 </strong>
 
-                <p>
+                <span>
                     Founder & CEO of Apex Universal Studios™
-                </p>
+                </span>
+
             </div>
 
-            <div>
+
+            <div class="footer-message">
+
                 <p>
                     Building the foundation for what comes next.
                 </p>
@@ -1179,6 +1757,16 @@
                 <p>
                     © 2026 Faruq Ayomide Ojolowo.
                 </p>
+
+            </div>
+
+
+            <div class="footer-mark">
+
+                <span>
+                    FARUQ
+                </span>
+
             </div>
 
         </div>
@@ -1186,6 +1774,7 @@
     </footer>
 
 
+    <!-- JavaScript will be added after the UI is stable -->
     <script src="script.js"></script>
 
 </body>
