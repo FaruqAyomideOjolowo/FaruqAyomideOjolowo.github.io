@@ -1,0 +1,301 @@
+/* =========================================================
+   FARUQ AYOMIDE OJOLOWO — FOUNDER WEBSITE
+   Interaction Layer
+   ========================================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  /* =======================================================
+     01. ELEMENTS
+     ======================================================= */
+
+  const body = document.body;
+
+  const profileTrigger = document.querySelector(".site-mark");
+  const profileOrbit = document.querySelector(".profile-orbit");
+
+  const menuButton = document.querySelector(".mobile-menu-button");
+  const mobileNavigation = document.querySelector(".mobile-navigation");
+
+  const mobileLinks = document.querySelectorAll(
+    ".mobile-navigation a"
+  );
+
+  const desktopLinks = document.querySelectorAll(
+    ".desktop-navigation a"
+  );
+
+  const socialLinks = document.querySelectorAll(
+    ".profile-social"
+  );
+
+
+  /* =======================================================
+     02. PROFILE / DP OVERLAY
+     ======================================================= */
+
+  function openProfile() {
+    body.classList.add("profile-open");
+    body.classList.remove("menu-open");
+
+    menuButton?.setAttribute("aria-expanded", "false");
+
+    profileTrigger?.setAttribute("aria-expanded", "true");
+  }
+
+  function closeProfile() {
+    body.classList.remove("profile-open");
+
+    profileTrigger?.setAttribute("aria-expanded", "false");
+  }
+
+  function toggleProfile() {
+    if (body.classList.contains("profile-open")) {
+      closeProfile();
+    } else {
+      openProfile();
+    }
+  }
+
+
+  /* =======================================================
+     03. MENU
+     ======================================================= */
+
+  function openMenu() {
+    body.classList.add("menu-open");
+    body.classList.remove("profile-open");
+
+    menuButton?.setAttribute("aria-expanded", "true");
+
+    profileTrigger?.setAttribute("aria-expanded", "false");
+  }
+
+  function closeMenu() {
+    body.classList.remove("menu-open");
+
+    menuButton?.setAttribute("aria-expanded", "false");
+  }
+
+  function toggleMenu() {
+    if (body.classList.contains("menu-open")) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  }
+
+
+  /* =======================================================
+     04. DP CLICK
+     ======================================================= */
+
+  profileTrigger?.addEventListener("click", (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+
+    toggleProfile();
+  });
+
+
+  /* =======================================================
+     05. MENU BUTTON CLICK
+     ======================================================= */
+
+  menuButton?.addEventListener("click", (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+
+    toggleMenu();
+  });
+
+
+  /* =======================================================
+     06. SOCIAL BUTTONS
+     ======================================================= */
+
+  socialLinks.forEach((social) => {
+
+    social.addEventListener("click", (event) => {
+      event.stopPropagation();
+    });
+
+  });
+
+
+  /* =======================================================
+     07. MOBILE NAVIGATION
+     ======================================================= */
+
+  mobileLinks.forEach((link) => {
+
+    link.addEventListener("click", () => {
+      closeMenu();
+    });
+
+  });
+
+
+  /* =======================================================
+     08. DESKTOP NAVIGATION
+     ======================================================= */
+
+  desktopLinks.forEach((link) => {
+
+    link.addEventListener("click", () => {
+      closeProfile();
+      closeMenu();
+    });
+
+  });
+
+
+  /* =======================================================
+     09. CLOSE PROFILE WHEN CLICKING OUTSIDE
+     ======================================================= */
+
+  profileOrbit?.addEventListener("click", (event) => {
+
+    if (
+      event.target === profileOrbit ||
+      event.target.classList.contains("profile-orbit")
+    ) {
+      closeProfile();
+    }
+
+  });
+
+
+  /* =======================================================
+     10. ESCAPE KEY
+     ======================================================= */
+
+  document.addEventListener("keydown", (event) => {
+
+    if (event.key !== "Escape") {
+      return;
+    }
+
+    closeProfile();
+    closeMenu();
+
+  });
+
+
+  /* =======================================================
+     11. PREVENT PROFILE + MENU FROM BEING OPEN TOGETHER
+     ======================================================= */
+
+  const observer = new MutationObserver(() => {
+
+    if (
+      body.classList.contains("profile-open") &&
+      body.classList.contains("menu-open")
+    ) {
+      body.classList.remove("menu-open");
+    }
+
+  });
+
+  observer.observe(body, {
+    attributes: true,
+    attributeFilter: ["class"]
+  });
+
+
+  /* =======================================================
+     12. ACTIVE SECTION NAVIGATION
+     ======================================================= */
+
+  const sections = document.querySelectorAll("main section[id]");
+
+  const sectionObserver = new IntersectionObserver(
+    (entries) => {
+
+      entries.forEach((entry) => {
+
+        if (!entry.isIntersecting) {
+          return;
+        }
+
+        const currentId = entry.target.getAttribute("id");
+
+        document
+          .querySelectorAll(
+            `.desktop-navigation a[href="#${currentId}"]`
+          )
+          .forEach((link) => {
+
+            document
+              .querySelectorAll(".desktop-navigation a")
+              .forEach((item) => {
+                item.removeAttribute("aria-current");
+              });
+
+            link.setAttribute("aria-current", "page");
+
+          });
+
+      });
+
+    },
+    {
+      rootMargin: "-35% 0px -55% 0px",
+      threshold: 0
+    }
+  );
+
+  sections.forEach((section) => {
+    sectionObserver.observe(section);
+  });
+
+
+  /* =======================================================
+     13. SMOOTH INTERNAL NAVIGATION
+     ======================================================= */
+
+  document
+    .querySelectorAll('a[href^="#"]')
+    .forEach((link) => {
+
+      link.addEventListener("click", (event) => {
+
+        const targetId = link.getAttribute("href");
+
+        if (
+          !targetId ||
+          targetId === "#" ||
+          targetId.length < 2
+        ) {
+          return;
+        }
+
+        const target = document.querySelector(targetId);
+
+        if (!target) {
+          return;
+        }
+
+        event.preventDefault();
+
+        closeProfile();
+        closeMenu();
+
+        target.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+
+      });
+
+    });
+
+
+  /* =======================================================
+     14. INITIAL STATE
+     ======================================================= */
+
+  closeProfile();
+  closeMenu();
+
+});
