@@ -1,5 +1,5 @@
 /* =========================================================
-   FARUQ    FARUQ AYOMIDE OJOLOWO — FOUNDER WEBSITE
+   FARUQ AYOMIDE OJOLOWO — FOUNDER WEBSITE
    REFINED & FIXED CSS
    ========================================================= */
 
@@ -179,6 +179,19 @@ p {
 .profile-trigger:focus-visible {
   outline: 2px solid var(--dark);
   outline-offset: 4px;
+}
+
+/* Profile trigger expanded when profile panel opens */
+body.profile-open .profile-trigger {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 140px;
+  height: 140px;
+  transform: translate(-50%, -50%);
+  z-index: 1001;
+  border: 2px solid var(--white);
+  box-shadow: 0 20px 80px rgba(0, 0, 0, 0.15);
 }
 
 .profile-image-shell {
@@ -402,7 +415,506 @@ body.profile-open .profile-social-panel::before {
   position: relative;
   width: 280px;
   height: 280px;
-< truncated lines 405-843 >
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: auto;
+}
+
+.profile-expanded-trigger {
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--bg-soft);
+  border: 2px solid var(--white);
+  box-shadow: 0 20px 80px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: transform var(--transition-fast);
+}
+
+.profile-expanded-trigger:hover {
+  transform: scale(1.08);
+}
+
+.profile-expanded-image-shell {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.profile-expanded-image-placeholder {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: transparent;
+}
+
+/* SOCIAL ORBIT BUTTONS */
+
+.social-orbit-button {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--white);
+  color: var(--dark);
+  border: 1px solid rgba(23, 23, 23, 0.12);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transform: scale(0);
+  transition: transform 600ms cubic-bezier(.22, 1, .36, 1);
+}
+
+.social-orbit-button:hover {
+  transform: scale(1.12) !important;
+}
+
+body.profile-open .social-orbit-button {
+  transform: scale(1);
+}
+
+.social-instagram { 
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 52px;
+  height: 52px;
+}
+
+body.profile-open .social-instagram {
+  transform: translateX(-50%) scale(1);
+}
+
+.social-x { 
+  top: 30%;
+  right: 12%;
+  width: 60px;
+  height: 60px;
+}
+
+body.profile-open .social-x {
+  transform: scale(1);
+}
+
+.social-threads { 
+  top: 50%;
+  right: 5%;
+  width: 48px;
+  height: 48px;
+}
+
+body.profile-open .social-threads {
+  transform: scale(1);
+}
+
+.social-facebook { 
+  bottom: 30%;
+  right: 12%;
+  width: 44px;
+  height: 44px;
+}
+
+body.profile-open .social-facebook {
+  transform: scale(1);
+}
+
+.social-tiktok { 
+  bottom: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 52px;
+  height: 52px;
+}
+
+body.profile-open .social-tiktok {
+  transform: translateX(-50%) scale(1);
+}
+
+.social-linkedin { 
+  top: 50%;
+  left: 5%;
+  width: 48px;
+  height: 48px;
+}
+
+body.profile-open .social-linkedin {
+  transform: scale(1);
+}
+
+/* HERO */
+
+.hero-section {
+  min-height: 100svh;
+  display: flex;
+  align-items: flex-end;
+  padding-top: 150px;
+  padding-bottom: 70px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
+  gap: clamp(40px, 7vw, 120px);
+  align-items: end;
+}
+
+.hero-content {
+  max-width: 1050px;
+}
+
+.hero-title {
+  margin-bottom: 42px;
+}
+
+.hero-description {
+  max-width: 640px;
+  padding-left: 22px;
+  border-left: 2px solid var(--dark);
+  font-size: clamp(16px, 1.5vw, 22px);
+  line-height: 1.5;
+}
+
+.hero-actions {
+  margin-top: 34px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+/* BUTTONS */
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 48px;
+  padding: 12px 22px;
+  border-radius: var(--pill);
+  border: none;
+  background: var(--dark);
+  color: var(--white);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform var(--transition-fast), background var(--transition-fast);
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  background: var(--brown);
+}
+
+.button:focus-visible {
+  outline: 2px solid var(--dark);
+  outline-offset: 4px;
+}
+
+.text-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity var(--transition-fast);
+}
+
+.text-link:hover {
+  opacity: 0.6;
+}
+
+/* MEDIA SLOTS */
+
+.media-slot {
+  position: relative;
+  margin: 0;
+  width: 100%;
+  overflow: hidden;
+  background: var(--bg-soft);
+  border-radius: 16px;
+  border: 1px solid rgba(23, 23, 23, 0.08);
+}
+
+.media-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  color: rgba(23, 23, 23, 0.45);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.media-slot-hero { aspect-ratio: 4 / 5; }
+.media-slot-about { aspect-ratio: 4 / 5; }
+.media-slot-building { aspect-ratio: 16 / 10; }
+.media-slot-apex { aspect-ratio: 16 / 10; }
+.media-slot-origin { aspect-ratio: 4 / 5; }
+.media-slot-development { aspect-ratio: 4 / 5; }
+.project-media { aspect-ratio: 4 / 3; }
+.media-slot-vision { aspect-ratio: 16 / 10; }
+.media-slot-currently { aspect-ratio: 4 / 5; }
+.media-slot-interests { aspect-ratio: 16 / 10; }
+
+/* SECTIONS */
+
+.section-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(280px, 0.7fr);
+  gap: clamp(50px, 9vw, 150px);
+  align-items: start;
+}
+
+.section-copy {
+  max-width: 760px;
+}
+
+.section-copy p + p {
+  margin-top: 22px;
+}
+
+.section-number {
+  font-family: var(--serif);
+  font-size: clamp(48px, 7vw, 120px);
+  font-weight: 400;
+  color: rgba(23, 23, 23, 0.08);
+  line-height: 0.8;
+  margin: 0 0 20px;
+}
+
+.section-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 25px;
+}
+
+.wide-heading {
+  margin-bottom: 60px;
+  max-width: 900px;
+}
+
+.wide-heading h2 {
+  margin-top: 30px;
+}
+
+/* FEATURE GRID */
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  margin: 50px 0;
+}
+
+.feature-item {
+  padding: 25px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.3);
+  transition: border-color var(--transition-fast), background var(--transition-fast);
+}
+
+.feature-item:hover {
+  border-color: var(--dark);
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.feature-item h3 {
+  font-size: clamp(20px, 2.5vw, 32px);
+  margin-bottom: 15px;
+}
+
+.feature-item p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+/* CLOSING COPY */
+
+.closing-copy {
+  margin-top: 60px;
+  padding: 30px;
+  border-left: 3px solid var(--text);
+  font-size: clamp(18px, 1.5vw, 22px);
+  line-height: 1.5;
+}
+
+/* DIRECTION LINE */
+
+.direction-block {
+  margin-top: 70px;
+}
+
+.direction-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--serif);
+  font-size: clamp(24px, 3.5vw, 52px);
+  line-height: 1.2;
+}
+
+/* DARK SECTION */
+
+.dark-section {
+  background: var(--brown);
+  color: var(--white);
+}
+
+.dark-section .eyebrow {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.dark-section .section-label {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.dark-section .section-number {
+  color: rgba(255, 255, 255, 0.08);
+}
+
+.dark-section .media-slot {
+  background: var(--brown-soft);
+  border-color: var(--line-light);
+}
+
+.dark-section .media-placeholder {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.dark-section .feature-item {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--line-light);
+}
+
+.dark-section .feature-item:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: var(--white);
+}
+
+.dark-section .feature-item p {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* LISTS */
+
+.plain-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.plain-list li {
+  padding: 8px 0;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.plain-list li::before {
+  content: "—";
+  display: inline-block;
+  width: 1.5em;
+  color: var(--muted);
+}
+
+/* PRINCIPLES GRID */
+
+.principles-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+  margin: 60px 0;
+}
+
+.principle-item {
+  min-height: 220px;
+  padding: 35px;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  transition: background var(--transition-fast);
+}
+
+.principle-item:hover {
+  background: var(--bg-soft);
+}
+
+.principle-number {
+  font-family: var(--serif);
+  font-size: 48px;
+  color: rgba(23, 23, 23, 0.12);
+  line-height: 0.8;
+  margin: 0 0 15px;
+}
+
+.principle-item h3 {
+  font-size: clamp(22px, 2.5vw, 36px);
+  margin-bottom: 12px;
+}
+
+.principle-item p {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* CORE PRINCIPLE */
+
+.core-principle {
+  margin-top: 70px;
+  max-width: 1000px;
+}
+
+.core-principle blockquote {
+  font-family: var(--serif);
+  font-size: clamp(32px, 5vw, 68px);
+  line-height: 1.1;
+  margin: 20px 0 0;
+  padding-left: 25px;
+  border-left: 3px solid var(--text);
+}
+
+/* DEVELOPMENT GRID */
+
+.development-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  margin: 60px 0;
+}
+
+.development-area {
+  padding: 30px;
+  background: var(--bg-soft);
+  border-radius: 12px;
+  transition: background var(--transition-fast);
+}
+
+.development-area:hover {
+  background: rgba(23, 23, 23, 0.04);
+}
+
+.development-area .section-label {
   margin-bottom: 18px;
 }
 
@@ -676,9 +1188,6 @@ body.profile-open .profile-social-panel::before {
   align-items: flex-end;
   justify-content: space-between;
   gap: 40px;
-}
-
-.footer-layout {
   width: min(100%, var(--container));
   margin-inline: auto;
 }
@@ -806,1720 +1315,4 @@ body:not(.menu-open) .page-content {
   .social-x { width: 48px; height: 48px; }
   .footer-layout { gap: 20px; }
   .site-footer { padding: 35px 20px; }
-}AYOMIDE OJOLOWO — FOUNDER WEBSITE
-   Editorial Founder / Creative Technology Direction
-   ========================================================= */
-
-/* =========================================================
-   01. DESIGN TOKENS
-   ========================================================= */
-
-:root {
-  --bg: #f4f1e9;
-  --bg-soft: #ece7dc;
-  --surface: #faf8f2;
-
-  --dark: #171717;
-  --dark-soft: #292824;
-
-  --brown: #3b2b22;
-  --brown-soft: #4a382d;
-
-  --text: #171717;
-  --muted: #6f6b63;
-  --line: rgba(23, 23, 23, 0.18);
-  --line-light: rgba(255, 255, 255, 0.22);
-
-  --white: #ffffff;
-
-  --serif: "Cormorant Garamond", Georgia, serif;
-  --sans: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-
-  --container: 1380px;
-  --side-padding: clamp(22px, 4vw, 64px);
-
-  --radius: 18px;
-  --pill: 999px;
-
-  --header-height: 88px;
-
-  --transition-fast: 220ms ease;
-  --transition: 420ms cubic-bezier(.22, 1, .36, 1);
-}
-
-
-/* =========================================================
-   02. RESET
-   ========================================================= */
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-  background: var(--bg);
-}
-
-body {
-  margin: 0;
-  background: var(--bg);
-  color: var(--text);
-  font-family: var(--sans);
-  font-weight: 400;
-  line-height: 1.6;
-  overflow-x: hidden;
-}
-
-body.no-scroll {
-  overflow: hidden;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-}
-
-button,
-a {
-  -webkit-tap-highlight-color: transparent;
-}
-
-button {
-  font: inherit;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-::selection {
-  background: var(--dark);
-  color: var(--white);
-}
-
-
-/* =========================================================
-   03. GLOBAL STRUCTURE
-   ========================================================= */
-
-main {
-  position: relative;
-  z-index: 1;
-}
-
-section {
-  position: relative;
-  padding: clamp(90px, 11vw, 170px) var(--side-padding);
-}
-
-.section-inner {
-  width: min(100%, var(--container));
-  margin-inline: auto;
-}
-
-.container {
-  width: min(100%, var(--container));
-  margin-inline: auto;
-}
-
-
-/* =========================================================
-   04. TYPOGRAPHY
-   ========================================================= */
-
-.eyebrow {
-  margin: 0 0 20px;
-  font-family: var(--sans);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  line-height: 1.2;
-  text-transform: uppercase;
-}
-
-h1,
-h2,
-h3,
-h4 {
-  margin: 0;
-  font-family: var(--serif);
-  font-weight: 500;
-  letter-spacing: -0.035em;
-  line-height: 0.94;
-}
-
-h1 {
-  font-size: clamp(64px, 9.5vw, 156px);
-}
-
-h2 {
-  font-size: clamp(52px, 7vw, 108px);
-}
-
-h3 {
-  font-size: clamp(34px, 4vw, 60px);
-}
-
-p {
-  margin: 0;
-}
-
-.lead {
-  max-width: 720px;
-  font-size: clamp(18px, 1.6vw, 24px);
-  line-height: 1.45;
-}
-
-.small-copy {
-  font-size: 14px;
-  line-height: 1.65;
-  color: var(--muted);
-}
-
-
-/* =========================================================
-   05. HEADER
-   ========================================================= */
-
-.site-header {
-  position: fixed;
-  inset: 0 0 auto;
-  z-index: 900;
-  padding: 18px var(--side-padding);
-  pointer-events: none;
-}
-
-.header-inner {
-  width: min(100%, var(--container));
-  margin-inline: auto;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  pointer-events: auto;
-}
-
-
-/* ---------- Circular DP ---------- */
-
-.site-mark {
-  position: relative;
-
-  width: 48px;
-  height: 48px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 50%;
-  overflow: hidden;
-
-  background: var(--bg-soft);
-  border: 1px solid var(--line);
-
-  cursor: pointer;
-
-  transition:
-    width var(--transition),
-    height var(--transition),
-    transform var(--transition),
-    box-shadow var(--transition);
-}
-
-.site-mark:hover {
-  transform: scale(1.04);
-}
-
-.site-mark-photo {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-
-  background: transparent;
-
-  /* Empty image slot.
-     Add your own image later. */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.site-mark-name,
-.site-mark-symbol {
-  display: none;
-}
-
-
-/* ---------- Desktop navigation ---------- */
-
-.desktop-navigation {
-  display: flex;
-  align-items: center;
-  gap: 30px;
-
-  padding: 10px 18px;
-
-  background: rgba(244, 241, 233, 0.84);
-  border: 1px solid rgba(23, 23, 23, 0.1);
-  border-radius: var(--pill);
-
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-}
-
-.desktop-navigation a {
-  position: relative;
-
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-
-  transition: opacity var(--transition-fast);
-}
-
-.desktop-navigation a:hover {
-  opacity: 0.5;
-}
-
-
-/* =========================================================
-   06. MENU BUTTON
-   ========================================================= */
-
-.mobile-menu-button {
-  position: relative;
-
-  width: 48px;
-  height: 48px;
-
-  display: none;
-  align-items: center;
-  justify-content: center;
-
-  border: 1px solid var(--line);
-  border-radius: 50%;
-
-  background: var(--bg);
-
-  cursor: pointer;
-
-  transition:
-    width var(--transition),
-    height var(--transition),
-    background var(--transition),
-    color var(--transition),
-    transform var(--transition);
-}
-
-.mobile-menu-button span {
-  position: absolute;
-
-  width: 17px;
-  height: 1px;
-
-  background: var(--dark);
-
-  transition:
-    transform var(--transition),
-    background var(--transition);
-}
-
-.mobile-menu-button span:first-child {
-  transform: translateY(-3px);
-}
-
-.mobile-menu-button span:last-child {
-  transform: translateY(3px);
-}
-
-
-/* Active menu button */
-
-body.menu-open .mobile-menu-button {
-  width: 42px;
-  height: 42px;
-
-  background: var(--white);
-  color: var(--dark);
-}
-
-body.menu-open .mobile-menu-button span:first-child {
-  transform: rotate(45deg);
-}
-
-body.menu-open .mobile-menu-button span:last-child {
-  transform: rotate(-45deg);
-}
-
-
-/* =========================================================
-   07. MOBILE MENU CANVAS
-   ========================================================= */
-
-.mobile-navigation {
-  position: fixed;
-  inset: 0;
-
-  z-index: 850;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  padding:
-    120px
-    var(--side-padding)
-    60px;
-
-  background: var(--dark);
-  color: var(--white);
-
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-
-  clip-path: inset(0 0 100% 0);
-
-  transition:
-    opacity var(--transition),
-    visibility var(--transition),
-    clip-path 700ms cubic-bezier(.22, 1, .36, 1);
-}
-
-body.menu-open .mobile-navigation {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-
-  clip-path: inset(0 0 0 0);
-}
-
-.mobile-navigation a {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  padding: 18px 0;
-
-  border-bottom: 1px solid var(--line-light);
-
-  font-family: var(--serif);
-  font-size: clamp(42px, 9vw, 86px);
-  line-height: 0.95;
-
-  transition:
-    padding-left var(--transition-fast),
-    opacity var(--transition-fast);
-}
-
-.mobile-navigation a::after {
-  content: "↗";
-
-  font-family: var(--sans);
-  font-size: 18px;
-  opacity: 0.55;
-}
-
-.mobile-navigation a:hover {
-  padding-left: 12px;
-}
-
-
-/* =========================================================
-   08. DP / SOCIAL ORBIT OVERLAY
-   ========================================================= */
-
-.profile-orbit {
-  position: fixed;
-  inset: 0;
-
-  z-index: 1000;
-
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-
-  pointer-events: none;
-
-  opacity: 0;
-  visibility: hidden;
-
-  transition:
-    opacity var(--transition),
-    visibility var(--transition);
-}
-
-.profile-orbit::before {
-  content: "";
-
-  position: absolute;
-  inset: 0;
-
-  background: rgba(23, 23, 23, 0.04);
-
-  backdrop-filter: blur(0);
-  -webkit-backdrop-filter: blur(0);
-
-  transition:
-    backdrop-filter 700ms ease,
-    -webkit-backdrop-filter 700ms ease,
-    background 700ms ease;
-}
-
-body.profile-open .profile-orbit {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-}
-
-body.profile-open .profile-orbit::before {
-  background: rgba(23, 23, 23, 0.12);
-
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-}
-
-.profile-orbit-center {
-  position: absolute;
-
-  top: 50%;
-  left: 50%;
-
-  width: 150px;
-  height: 150px;
-
-  transform: translate(-50%, -50%);
-
-  border-radius: 50%;
-
-  background: var(--bg-soft);
-  border: 1px solid rgba(23, 23, 23, 0.2);
-
-  overflow: hidden;
-
-  box-shadow:
-    0 20px 80px rgba(0, 0, 0, 0.15);
-
-  transition: transform 700ms cubic-bezier(.22, 1, .36, 1);
-}
-
-.profile-orbit-center .profile-photo {
-  width: 100%;
-  height: 100%;
-
-  border-radius: 50%;
-
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-
-/* ---------- Social circles ---------- */
-
-.profile-social {
-  position: absolute;
-
-  width: 48px;
-  height: 48px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 50%;
-
-  background: var(--white);
-  color: var(--dark);
-
-  border: 1px solid rgba(23, 23, 23, 0.12);
-
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
-
-  transform: scale(0);
-
-  transition:
-    transform 600ms cubic-bezier(.22, 1, .36, 1),
-    width var(--transition-fast),
-    height var(--transition-fast);
-}
-
-.profile-social:hover {
-  transform: scale(1.08) !important;
-}
-
-.profile-social svg {
-  width: 19px;
-  height: 19px;
-  fill: currentColor;
-}
-
-body.profile-open .profile-social {
-  transform: scale(1);
-}
-
-.profile-social.instagram {
-  top: 29%;
-  left: 34%;
-}
-
-.profile-social.x {
-  top: 30%;
-  left: 62%;
-
-  width: 58px;
-  height: 58px;
-}
-
-.profile-social.threads {
-  top: 48%;
-  left: 27%;
-}
-
-.profile-social.facebook {
-  top: 61%;
-  left: 32%;
-
-  width: 42px;
-  height: 42px;
-}
-
-.profile-social.tiktok {
-  top: 66%;
-  left: 61%;
-}
-
-.profile-social.linkedin {
-  top: 45%;
-  left: 68%;
-
-  width: 43px;
-  height: 43px;
-}
-
-
-/* =========================================================
-   09. HERO
-   ========================================================= */
-
-.hero {
-  min-height: 100svh;
-
-  display: flex;
-  align-items: flex-end;
-
-  padding-top: 150px;
-  padding-bottom: 70px;
-}
-
-.hero-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
-  gap: clamp(40px, 7vw, 120px);
-
-  align-items: end;
-}
-
-.hero-copy {
-  max-width: 1050px;
-}
-
-.hero h1 {
-  max-width: 1100px;
-  margin-bottom: 42px;
-}
-
-.hero-description {
-  max-width: 640px;
-
-  padding-left: 22px;
-
-  border-left: 1px solid var(--dark);
-
-  font-size: clamp(18px, 1.7vw, 25px);
-  line-height: 1.45;
-}
-
-.hero-actions {
-  margin-top: 34px;
-
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-
-
-/* =========================================================
-   10. BUTTONS
-   ========================================================= */
-
-.button {
-  display: inline-flex;
-  align-items: center;
-  gap: 15px;
-
-  min-height: 48px;
-  padding: 12px 19px;
-
-  border-radius: var(--pill);
-
-  background: var(--dark);
-  color: var(--white);
-
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-
-  transition:
-    transform var(--transition-fast),
-    background var(--transition-fast),
-    color var(--transition-fast);
-}
-
-.button::after {
-  content: "↗";
-  font-size: 14px;
-}
-
-.button:hover {
-  transform: translateY(-2px);
-  background: var(--brown);
-}
-
-.button.secondary {
-  background: transparent;
-  color: var(--dark);
-  border: 1px solid var(--line);
-}
-
-.button.secondary:hover {
-  background: var(--dark);
-  color: var(--white);
-}
-
-
-/* =========================================================
-   11. MEDIA SLOTS
-   ========================================================= */
-
-.media-slot {
-  position: relative;
-
-  margin: 0;
-
-  width: 100%;
-
-  overflow: hidden;
-
-  background: var(--bg-soft);
-  border-radius: 16px;
-
-  border: 1px solid rgba(23, 23, 23, 0.08);
-}
-
-.media-placeholder {
-  width: 100%;
-  height: 100%;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 20px;
-
-  color: rgba(23, 23, 23, 0.45);
-
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-
-  text-align: center;
-}
-
-.media-slot-hero {
-  aspect-ratio: 4 / 5;
-}
-
-.media-slot-about {
-  aspect-ratio: 4 / 5;
-}
-
-.media-slot-building {
-  aspect-ratio: 16 / 10;
-}
-
-.media-slot-apex {
-  aspect-ratio: 16 / 10;
-}
-
-.media-slot-origin {
-  aspect-ratio: 4 / 5;
-}
-
-.media-slot-development {
-  aspect-ratio: 4 / 5;
-}
-
-.project-media {
-  aspect-ratio: 4 / 3;
-}
-
-.media-slot-vision {
-  aspect-ratio: 16 / 10;
-}
-
-.media-slot-currently {
-  aspect-ratio: 4 / 5;
-}
-
-.media-slot-interests {
-  aspect-ratio: 16 / 10;
-}
-
-
-/* =========================================================
-   12. INTRO / ABOUT
-   ========================================================= */
-
-.about-section {
-  padding-top: 70px;
-}
-
-.about-grid {
-  display: grid;
-  grid-template-columns: minmax(280px, 0.7fr) minmax(0, 1.3fr);
-  gap: clamp(50px, 9vw, 150px);
-
-  align-items: start;
-}
-
-.about-copy {
-  max-width: 760px;
-}
-
-.about-copy p + p {
-  margin-top: 22px;
-}
-
-
-/* =========================================================
-   13. DIRECTION / BUILDING
-   ========================================================= */
-
-.direction-section {
-  background: var(--bg-soft);
-}
-
-.direction-grid {
-  display: grid;
-  grid-template-columns: 0.65fr 1.35fr;
-  gap: clamp(50px, 9vw, 150px);
-}
-
-.direction-copy {
-  max-width: 780px;
-}
-
-.direction-copy p {
-  font-size: clamp(18px, 1.5vw, 23px);
-  line-height: 1.55;
-}
-
-.direction-copy p + p {
-  margin-top: 22px;
-}
-
-.direction-line {
-  margin-top: 55px;
-
-  font-family: var(--serif);
-  font-size: clamp(28px, 4vw, 58px);
-  line-height: 1.05;
-}
-
-
-/* =========================================================
-   14. APEX SECTION — DARK EDITORIAL
-   ========================================================= */
-
-.apex-section {
-  background: var(--brown);
-  color: var(--white);
-}
-
-.apex-section .eyebrow,
-.apex-section .small-copy {
-  color: rgba(255, 255, 255, 0.62);
-}
-
-.apex-section .media-slot {
-  background: var(--brown-soft);
-  border-color: var(--line-light);
-}
-
-.apex-section .media-placeholder {
-  color: rgba(255, 255, 255, 0.45);
-}
-
-.apex-section .direction-line {
-  color: var(--white);
-}
-
-.apex-grid {
-  display: grid;
-  grid-template-columns: 0.75fr 1.25fr;
-  gap: clamp(50px, 9vw, 150px);
-}
-
-.apex-copy {
-  max-width: 800px;
-}
-
-.apex-copy p {
-  font-size: clamp(18px, 1.5vw, 23px);
-  line-height: 1.55;
-}
-
-.apex-copy p + p {
-  margin-top: 22px;
-}
-
-
-/* =========================================================
-   15. LISTS
-   ========================================================= */
-
-.editorial-list {
-  margin: 40px 0 0;
-  padding: 0;
-
-  list-style: none;
-
-  border-top: 1px solid var(--line);
-}
-
-.editorial-list li {
-  padding: 17px 0;
-
-  border-bottom: 1px solid var(--line);
-
-  display: flex;
-  justify-content: space-between;
-  gap: 30px;
-
-  font-size: 14px;
-}
-
-.editorial-list li::after {
-  content: "↗";
-
-  color: var(--muted);
-}
-
-.apex-section .editorial-list {
-  border-color: var(--line-light);
-}
-
-.apex-section .editorial-list li {
-  border-color: var(--line-light);
-}
-
-
-/* =========================================================
-   16. ORIGIN
-   ========================================================= */
-
-.origin-grid {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: clamp(50px, 9vw, 150px);
-
-  align-items: start;
-}
-
-.origin-copy {
-  max-width: 780px;
-}
-
-.origin-copy p {
-  font-size: clamp(18px, 1.5vw, 23px);
-  line-height: 1.55;
-}
-
-.origin-copy p + p {
-  margin-top: 24px;
-}
-
-
-/* =========================================================
-   17. PHILOSOPHY
-   ========================================================= */
-
-.philosophy-section {
-  background: var(--bg-soft);
-}
-
-.philosophy-intro {
-  max-width: 800px;
-  margin-bottom: 75px;
-}
-
-.philosophy-intro p {
-  margin-top: 25px;
-
-  font-size: clamp(20px, 2vw, 30px);
-  line-height: 1.45;
-}
-
-.philosophy-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-
-  border-top: 1px solid var(--line);
-  border-left: 1px solid var(--line);
-}
-
-.philosophy-item {
-  min-height: 210px;
-
-  padding: 30px;
-
-  border-right: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-}
-
-.philosophy-item h3 {
-  margin-bottom: 20px;
-
-  font-size: clamp(28px, 3vw, 43px);
-}
-
-.philosophy-item p {
-  color: var(--muted);
-  font-size: 14px;
-  line-height: 1.6;
-}
-
-.core-principle {
-  margin-top: 70px;
-
-  max-width: 900px;
-
-  font-family: var(--serif);
-  font-size: clamp(36px, 5vw, 72px);
-  line-height: 1;
-}
-
-
-/* =========================================================
-   18. DEVELOPMENT
-   ========================================================= */
-
-.development-grid {
-  display: grid;
-  grid-template-columns: 0.75fr 1.25fr;
-  gap: clamp(50px, 9vw, 150px);
-}
-
-.development-copy {
-  max-width: 780px;
-}
-
-.development-copy > p {
-  font-size: clamp(18px, 1.5vw, 23px);
-  line-height: 1.55;
-}
-
-.development-category {
-  padding: 26px 0;
-
-  border-top: 1px solid var(--line);
-}
-
-.development-category:last-child {
-  border-bottom: 1px solid var(--line);
-}
-
-.development-category h3 {
-  margin-bottom: 12px;
-
-  font-size: clamp(28px, 3vw, 42px);
-}
-
-.development-category p {
-  color: var(--muted);
-  font-size: 14px;
-}
-
-
-/* =========================================================
-   19. DEVELOPMENT LOOP
-   ========================================================= */
-
-.development-loop {
-  margin-top: 70px;
-
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 10px;
-}
-
-.development-loop span {
-  padding: 10px 15px;
-
-  border: 1px solid var(--line);
-  border-radius: var(--pill);
-
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-}
-
-.development-loop i {
-  font-style: normal;
-  color: var(--muted);
-}
-
-
-/* =========================================================
-   20. PROJECTS
-   ========================================================= */
-
-.projects-section {
-  background: var(--bg-soft);
-}
-
-.projects-intro {
-  max-width: 750px;
-  margin-bottom: 70px;
-}
-
-.projects-intro p {
-  margin-top: 25px;
-
-  font-size: clamp(18px, 1.5vw, 23px);
-  line-height: 1.5;
-}
-
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 55px 30px;
-}
-
-.project {
-  min-width: 0;
-}
-
-.project-media {
-  margin-bottom: 25px;
-}
-
-.project h3 {
-  margin-bottom: 10px;
-}
-
-.project-status {
-  margin-bottom: 15px;
-
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-
-  color: var(--muted);
-}
-
-.project p {
-  max-width: 650px;
-
-  font-size: 14px;
-  line-height: 1.65;
-}
-
-.project + .project {
-  margin-top: 0;
-}
-
-
-/* =========================================================
-   21. MILESTONES
-   ========================================================= */
-
-.milestones-intro {
-  max-width: 780px;
-  margin-bottom: 75px;
-}
-
-.milestones-intro p {
-  margin-top: 25px;
-
-  font-size: clamp(18px, 1.5vw, 23px);
-  line-height: 1.55;
-}
-
-.timeline {
-  border-top: 1px solid var(--line);
-}
-
-.timeline-item {
-  display: grid;
-  grid-template-columns: 180px 1fr;
-
-  gap: 40px;
-
-  padding: 25px 0;
-
-  border-bottom: 1px solid var(--line);
-}
-
-.timeline-year {
-  font-family: var(--serif);
-  font-size: 28px;
-}
-
-.timeline-item p {
-  max-width: 760px;
-  font-size: 14px;
-}
-
-
-/* =========================================================
-   22. LONG-TERM VISION — DARK SECTION
-   ========================================================= */
-
-.vision-section {
-  background: var(--dark);
-  color: var(--white);
-}
-
-.vision-section .eyebrow,
-.vision-section .small-copy {
-  color: rgba(255, 255, 255, 0.55);
-}
-
-.vision-grid {
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: clamp(50px, 9vw, 150px);
-
-  align-items: start;
-}
-
-.vision-copy {
-  max-width: 850px;
-}
-
-.vision-copy p {
-  font-size: clamp(20px, 2vw, 30px);
-  line-height: 1.5;
-}
-
-.vision-copy p + p {
-  margin-top: 25px;
-}
-
-.vision-section .media-slot {
-  background: var(--dark-soft);
-  border-color: var(--line-light);
-}
-
-.vision-section .media-placeholder {
-  color: rgba(255, 255, 255, 0.4);
-}
-
-
-/* =========================================================
-   23. CURRENTLY
-   ========================================================= */
-
-.currently-section {
-  background: var(--bg-soft);
-}
-
-.currently-grid {
-  display: grid;
-  grid-template-columns: 0.7fr 1.3fr;
-  gap: clamp(50px, 9vw, 150px);
-
-  align-items: start;
-}
-
-.currently-copy {
-  max-width: 760px;
-}
-
-.currently-copy p {
-  font-size: clamp(20px, 2vw, 30px);
-  line-height: 1.45;
-}
-
-.currently-list {
-  margin-top: 40px;
-
-  list-style: none;
-
-  padding: 0;
-
-  border-top: 1px solid var(--line);
-}
-
-.currently-list li {
-  padding: 18px 0;
-
-  border-bottom: 1px solid var(--line);
-
-  font-family: var(--serif);
-  font-size: clamp(28px, 3vw, 44px);
-}
-
-
-/* =========================================================
-   24. PERSONAL INTERESTS
-   ========================================================= */
-
-.interests-grid {
-  display: grid;
-  grid-template-columns: 0.65fr 1.35fr;
-  gap: clamp(50px, 9vw, 150px);
-}
-
-.interests-list {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-
-  border-top: 1px solid var(--line);
-  border-left: 1px solid var(--line);
-}
-
-.interest {
-  padding: 25px;
-
-  border-right: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-
-  font-family: var(--serif);
-  font-size: clamp(28px, 3vw, 45px);
-}
-
-
-/* =========================================================
-   25. CONTACT
-   ========================================================= */
-
-.contact-section {
-  background: var(--brown);
-  color: var(--white);
-}
-
-.contact-section .eyebrow,
-.contact-section .small-copy {
-  color: rgba(255, 255, 255, 0.55);
-}
-
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-
-  gap: 60px;
-}
-
-.contact-heading {
-  max-width: 700px;
-}
-
-.contact-copy {
-  max-width: 600px;
-
-  align-self: end;
-}
-
-.contact-copy p {
-  font-size: clamp(18px, 1.5vw, 23px);
-  line-height: 1.5;
-}
-
-.social-links {
-  margin-top: 35px;
-
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.social-links a {
-  padding: 11px 16px;
-
-  border: 1px solid var(--line-light);
-  border-radius: var(--pill);
-
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-
-  transition:
-    background var(--transition-fast),
-    color var(--transition-fast);
-}
-
-.social-links a:hover {
-  background: var(--white);
-  color: var(--dark);
-}
-
-
-/* =========================================================
-   26. FOOTER
-   ========================================================= */
-
-.site-footer {
-  padding:
-    40px
-    var(--side-padding);
-
-  background: var(--dark);
-  color: var(--white);
-}
-
-.footer-inner {
-  width: min(100%, var(--container));
-  margin-inline: auto;
-
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-
-  gap: 40px;
-}
-
-.footer-name {
-  font-family: var(--serif);
-  font-size: clamp(28px, 3vw, 45px);
-  line-height: 1;
-}
-
-.footer-role {
-  margin-top: 8px;
-
-  color: rgba(255, 255, 255, 0.55);
-
-  font-size: 11px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.footer-copy {
-  color: rgba(255, 255, 255, 0.5);
-
-  font-size: 11px;
-  text-align: right;
-}
-
-
-/* =========================================================
-   27. OVERLAY STATE
-   ========================================================= */
-
-body.profile-open main,
-body.profile-open .site-footer,
-body.menu-open main,
-body.menu-open .site-footer {
-  filter: blur(14px);
-  transform: scale(1.015);
-
-  transition:
-    filter 700ms ease,
-    transform 700ms ease;
-}
-
-body:not(.profile-open) main,
-body:not(.menu-open) main,
-body:not(.profile-open) .site-footer,
-body:not(.menu-open) .site-footer {
-  filter: blur(0);
-  transform: scale(1);
-  transition:
-    filter 700ms ease,
-    transform 700ms ease;
-}
-
-
-/* =========================================================
-   28. ACCESSIBILITY
-   ========================================================= */
-
-:focus-visible {
-  outline: 2px solid var(--dark);
-  outline-offset: 4px;
-}
-
-.apex-section :focus-visible,
-.vision-section :focus-visible,
-.contact-section :focus-visible,
-.site-footer :focus-visible {
-  outline-color: var(--white);
-}
-
-
-/* =========================================================
-   29. TABLET
-   ========================================================= */
-
-@media (max-width: 980px) {
-
-  .desktop-navigation {
-    display: none;
-  }
-
-  .mobile-menu-button {
-    display: flex;
-  }
-
-  .hero-grid,
-  .about-grid,
-  .direction-grid,
-  .apex-grid,
-  .origin-grid,
-  .development-grid,
-  .vision-grid,
-  .currently-grid,
-  .interests-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .hero {
-    padding-top: 130px;
-  }
-
-  .hero h1 {
-    max-width: 900px;
-  }
-
-  .hero-grid {
-    gap: 55px;
-  }
-
-  .hero-media {
-    max-width: 600px;
-    margin-left: auto;
-  }
-
-  .about-grid {
-    gap: 55px;
-  }
-
-  .philosophy-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .projects-grid {
-    gap: 45px 24px;
-  }
-
-  .contact-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .contact-copy {
-    align-self: start;
-  }
-
-  .footer-inner {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-
-  .footer-copy {
-    text-align: left;
-  }
-}
-
-
-/* =========================================================
-   30. MOBILE
-   ========================================================= */
-
-@media (max-width: 640px) {
-
-  :root {
-    --side-padding: 20px;
-  }
-
-  section {
-    padding-top: 90px;
-    padding-bottom: 90px;
-  }
-
-  .site-header {
-    padding: 14px 20px;
-  }
-
-  .site-mark {
-    width: 42px;
-    height: 42px;
-  }
-
-  .mobile-menu-button {
-    width: 42px;
-    height: 42px;
-  }
-
-  .hero {
-    min-height: 100svh;
-
-    padding-top: 115px;
-    padding-bottom: 45px;
-  }
-
-  .hero h1 {
-    font-size: clamp(57px, 17vw, 88px);
-    line-height: 0.9;
-    margin-bottom: 32px;
-  }
-
-  .hero-description {
-    padding-left: 16px;
-    font-size: 17px;
-  }
-
-  .hero-actions {
-    align-items: stretch;
-    flex-direction: column;
-  }
-
-  .button {
-    justify-content: space-between;
-  }
-
-  .media-slot-hero {
-    aspect-ratio: 1 / 1.1;
-  }
-
-  .philosophy-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .philosophy-item {
-    min-height: auto;
-  }
-
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .timeline-item {
-    grid-template-columns: 1fr;
-    gap: 8px;
-  }
-
-  .timeline-year {
-    font-size: 24px;
-  }
-
-  .interests-list {
-    grid-template-columns: 1fr;
-  }
-
-  .interest {
-    padding: 22px;
-  }
-
-  .mobile-navigation {
-    padding:
-      100px
-      20px
-      40px;
-  }
-
-  .mobile-navigation a {
-    font-size: clamp(42px, 13vw, 68px);
-  }
-
-  /* Social orbit becomes more compact on phones */
-
-  .profile-orbit-center {
-    width: 125px;
-    height: 125px;
-  }
-
-  .profile-social {
-    width: 43px;
-    height: 43px;
-  }
-
-  .profile-social.x {
-    width: 52px;
-    height: 52px;
-  }
-
-  .profile-social.instagram {
-    top: 29%;
-    left: 22%;
-  }
-
-  .profile-social.x {
-    top: 29%;
-    left: 67%;
-  }
-
-  .profile-social.threads {
-    top: 48%;
-    left: 13%;
-  }
-
-  .profile-social.facebook {
-    top: 64%;
-    left: 21%;
-  }
-
-  .profile-social.tiktok {
-    top: 68%;
-    left: 68%;
-  }
-
-  .profile-social.linkedin {
-    top: 47%;
-    left: 76%;
-  }
-
-  .footer-inner {
-    gap: 25px;
-  }
-
-  .site-footer {
-    padding-top: 35px;
-    padding-bottom: 35px;
-  }
-}
-
-
-/* =========================================================
-   31. REDUCED MOTION
-   ========================================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-  html {
-    scroll-behavior: auto;
-  }
-
-  *,
-  *::before,
-  *::after {
-    transition-duration: 0.01ms !important;
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-  }
 }
