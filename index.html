@@ -17,24 +17,13 @@
 
     <title>Faruq Ayomide Ojolowo — Founder & CEO</title>
 
-    <!--
-        TYPOGRAPHY FOUNDATION
-
-        Display:
-        Cormorant Garamond
-        Elegant editorial serif for major headings.
-
-        Supporting:
-        DM Sans
-        Clean, modern supporting type for navigation,
-        labels, buttons and interface elements.
-
-        The visual hierarchy will be refined further in styles.css.
-    -->
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
 
     <link
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap"
@@ -57,12 +46,6 @@
 
             <!-- =================================================
                  PERSONAL DP BUTTON
-
-                 IMPORTANT:
-                 This is intentionally an EMPTY image space.
-
-                 Later, your own photograph will be uploaded to
-                 the repository and connected to this slot.
                  ================================================= -->
 
             <button
@@ -75,12 +58,11 @@
 
                 <span class="profile-image-shell">
 
-                    <span
-                        class="profile-image-placeholder"
-                        aria-hidden="true"
+                    <img
+                        class="profile-image"
+                        src="faruq-profile.jpg"
+                        alt="Faruq Ayomide Ojolowo"
                     >
-                        <!-- Your photo will go here later -->
-                    </span>
 
                 </span>
 
@@ -109,10 +91,6 @@
 
             <!-- =================================================
                  MENU BUTTON
-
-                 The same button remains visible when the menu
-                 canvas opens. CSS/JS will shrink it into its
-                 active state.
                  ================================================= -->
 
             <button
@@ -131,14 +109,6 @@
 
         <!-- =====================================================
              PROFILE / SOCIAL OVERLAY
-
-             Hidden during the normal state.
-
-             When the DP is clicked:
-             - page becomes blurred
-             - DP becomes larger
-             - social buttons appear around it
-             - this layer remains sharp
              ===================================================== -->
 
         <div
@@ -150,6 +120,7 @@
             <div class="profile-social-orbit">
 
                 <!-- Enlarged DP -->
+
                 <button
                     class="profile-expanded-trigger"
                     type="button"
@@ -158,12 +129,11 @@
 
                     <span class="profile-expanded-image-shell">
 
-                        <span
-                            class="profile-expanded-image-placeholder"
-                            aria-hidden="true"
+                        <img
+                            class="profile-expanded-image"
+                            src="faruq-profile.jpg"
+                            alt="Faruq Ayomide Ojolowo"
                         >
-                            <!-- Your photo will go here later -->
-                        </span>
 
                     </span>
 
@@ -172,16 +142,11 @@
 
                 <!-- =================================================
                      SOCIAL BUTTONS
-
-                     These are real links.
-
-                     Their sizes and positions will be controlled
-                     by styles.css so they can form the organic
-                     orbit shown in your reference.
                      ================================================= -->
 
 
                 <!-- Instagram -->
+
                 <a
                     class="social-orbit-button social-instagram"
                     href="https://www.instagram.com/societyloveburti?stkn=MTk4dnJqcm1oOW84eA%3D%3D&utm_source=qr"
@@ -194,6 +159,7 @@
 
 
                 <!-- X -->
+
                 <a
                     class="social-orbit-button social-x"
                     href="https://x.com/societylovburti?s=11"
@@ -206,6 +172,7 @@
 
 
                 <!-- Threads -->
+
                 <a
                     class="social-orbit-button social-threads"
                     href="https://www.threads.com/@societyloveburti?igshid=NTc4MTIwNjQ2YQ=="
@@ -218,6 +185,7 @@
 
 
                 <!-- Facebook -->
+
                 <a
                     class="social-orbit-button social-facebook"
                     href="https://www.facebook.com/share/1C5KWFmyR6/?mibextid=wwXIfr"
@@ -230,6 +198,7 @@
 
 
                 <!-- TikTok -->
+
                 <a
                     class="social-orbit-button social-tiktok"
                     href="https://www.tiktok.com/@societyloveburti?_r=1&_t=ZS-99svKEEcULK"
@@ -242,6 +211,7 @@
 
 
                 <!-- LinkedIn -->
+
                 <a
                     class="social-orbit-button social-linkedin"
                     href="https://www.linkedin.com/in/faruq-ayomide-ojolowo-690809438?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
@@ -259,11 +229,6 @@
 
         <!-- =====================================================
              MOBILE / CANVAS NAVIGATION
-
-             This is the black canvas from your reference.
-
-             CSS will make the underlying webpage blur while this
-             canvas remains sharp.
              ===================================================== -->
 
         <nav
@@ -320,10 +285,6 @@
 
     <!-- =========================================================
          PAGE CONTENT
-
-         The page wrapper gives JavaScript/CSS one element to
-         blur when either the profile or navigation interface is
-         active.
          ========================================================= -->
 
     <div class="page-content">
@@ -343,7 +304,6 @@
                 <div class="page-container hero-grid">
 
 
-                    <!-- Hero text -->
                     <div class="hero-content">
 
                         <p class="eyebrow">
@@ -396,15 +356,22 @@
                     </div>
 
 
-                    <!-- HERO IMAGE SPACE -->
+                    <!-- =================================================
+                         HERO IMAGE
+                         ================================================= -->
+
                     <figure
                         class="media-slot media-slot-hero"
                         data-media="founder-hero"
                         aria-label="Faruq Ayomide Ojolowo photograph"
                     >
-                        <div class="media-placeholder">
-                            <span>Your photo</span>
-                        </div>
+
+                        <img
+                            class="hero-image"
+                            src="faruq-hero.jpg"
+                            alt="Faruq Ayomide Ojolowo"
+                        >
+
                     </figure>
 
 
@@ -484,7 +451,8 @@
                     </div>
 
 
-                    <!-- Personal photograph space -->
+                    <!-- Future image -->
+
                     <figure
                         class="media-slot media-slot-about"
                         data-media="founder-about"
@@ -577,7 +545,6 @@
                     </div>
 
 
-                    <!-- Decorative / future visual space -->
                     <figure
                         class="media-slot media-slot-building"
                         data-media="building-visual"
@@ -591,7 +558,6 @@
                 </div>
 
 
-                <!-- Direction -->
                 <div class="page-container direction-block">
 
                     <p class="section-label">
@@ -624,9 +590,6 @@
 
             <!-- =================================================
                  04 — APEX
-
-                 The dark-background treatment will be applied to
-                 this section in styles.css.
                  ================================================= -->
 
             <section
@@ -673,19 +636,12 @@
                             <ul class="plain-list">
 
                                 <li>Entertainment</li>
-
                                 <li>Media</li>
-
                                 <li>Technology</li>
-
                                 <li>Artificial intelligence</li>
-
                                 <li>Automation</li>
-
                                 <li>Business</li>
-
                                 <li>Intellectual property</li>
-
                                 <li>Creative development</li>
 
                             </ul>
@@ -712,7 +668,6 @@
                     </div>
 
 
-                    <!-- Apex logo / company visual space -->
                     <figure
                         class="media-slot media-slot-apex"
                         data-media="apex-logo-or-visual"
@@ -726,7 +681,6 @@
                 </div>
 
 
-                <!-- Apex ecosystem -->
                 <div class="page-container">
 
                     <div class="subsection-heading">
@@ -739,7 +693,6 @@
 
 
                     <div class="feature-grid">
-
 
                         <article class="feature-item">
 
@@ -833,7 +786,6 @@
             >
 
                 <div class="page-container section-grid">
-
 
                     <div class="section-copy">
 
@@ -986,174 +938,90 @@
                     </div>
 
 
-                    <!-- Principles -->
                     <div class="principles-grid">
 
-
                         <article class="principle-item">
-
-                            <p class="principle-number">
-                                01
-                            </p>
-
-                            <h3>
-                                Originality
-                            </h3>
-
-                            <p>
-                                Create things with their own identity.
-                            </p>
-
+                            <p class="principle-number">01</p>
+                            <h3>Originality</h3>
+                            <p>Create things with their own identity.</p>
                         </article>
 
-
                         <article class="principle-item">
-
-                            <p class="principle-number">
-                                02
-                            </p>
-
-                            <h3>
-                                Independence
-                            </h3>
-
+                            <p class="principle-number">02</p>
+                            <h3>Independence</h3>
                             <p>
                                 Think, create, build, and decide
                                 independently while still collaborating
                                 with others.
                             </p>
-
                         </article>
 
-
                         <article class="principle-item">
-
-                            <p class="principle-number">
-                                03
-                            </p>
-
-                            <h3>
-                                Ownership
-                            </h3>
-
+                            <p class="principle-number">03</p>
+                            <h3>Ownership</h3>
                             <p>
                                 Take responsibility for the company,
                                 intellectual property, projects,
                                 decisions, capabilities, and direction
                                 being built.
                             </p>
-
                         </article>
 
-
                         <article class="principle-item">
-
-                            <p class="principle-number">
-                                04
-                            </p>
-
-                            <h3>
-                                Excellence
-                            </h3>
-
+                            <p class="principle-number">04</p>
+                            <h3>Excellence</h3>
                             <p>
                                 Care about quality, craft, detail, and
                                 continuous improvement.
                             </p>
-
                         </article>
 
-
                         <article class="principle-item">
-
-                            <p class="principle-number">
-                                05
-                            </p>
-
-                            <h3>
-                                Innovation
-                            </h3>
-
+                            <p class="principle-number">05</p>
+                            <h3>Innovation</h3>
                             <p>
                                 Use technology intelligently to expand
                                 what can be created and how things can
                                 be built.
                             </p>
-
                         </article>
 
-
                         <article class="principle-item">
-
-                            <p class="principle-number">
-                                06
-                            </p>
-
-                            <h3>
-                                Long-term thinking
-                            </h3>
-
+                            <p class="principle-number">06</p>
+                            <h3>Long-term thinking</h3>
                             <p>
                                 Build things that can develop, evolve,
                                 and create value over time.
                             </p>
-
                         </article>
 
-
                         <article class="principle-item">
-
-                            <p class="principle-number">
-                                07
-                            </p>
-
-                            <h3>
-                                Ambition
-                            </h3>
-
+                            <p class="principle-number">07</p>
+                            <h3>Ambition</h3>
                             <p>
                                 Pursue significant creative,
                                 technological, and business capabilities.
                             </p>
-
                         </article>
 
-
                         <article class="principle-item">
-
-                            <p class="principle-number">
-                                08
-                            </p>
-
-                            <h3>
-                                Freedom
-                            </h3>
-
+                            <p class="principle-number">08</p>
+                            <h3>Freedom</h3>
                             <p>
                                 Maintain the freedom to explore different
                                 mediums, industries, technologies, ideas,
                                 and business models.
                             </p>
-
                         </article>
 
-
                         <article class="principle-item">
-
-                            <p class="principle-number">
-                                09
-                            </p>
-
-                            <h3>
-                                Discipline
-                            </h3>
-
+                            <p class="principle-number">09</p>
+                            <h3>Discipline</h3>
                             <p>
                                 Recognize that ambition requires
                                 execution, consistency, and the ability
                                 to keep building.
                             </p>
-
                         </article>
 
                     </div>
@@ -1189,7 +1057,6 @@
             >
 
                 <div class="page-container section-grid">
-
 
                     <div class="section-copy">
 
@@ -1252,9 +1119,7 @@
                 </div>
 
 
-                <!-- Development areas -->
                 <div class="page-container development-grid">
-
 
                     <article class="development-area">
 
@@ -1329,7 +1194,6 @@
                 </div>
 
 
-                <!-- Development loop -->
                 <div class="page-container development-loop">
 
                     <p class="section-label">
@@ -1402,7 +1266,6 @@
                     </div>
 
 
-                    <!-- Apex Project -->
                     <article class="project-entry">
 
                         <figure
@@ -1444,7 +1307,6 @@
                     </article>
 
 
-                    <!-- Creative Development -->
                     <article class="project-entry">
 
                         <figure
@@ -1482,7 +1344,6 @@
                     </article>
 
 
-                    <!-- Technology & AI -->
                     <article class="project-entry">
 
                         <figure
@@ -1519,7 +1380,6 @@
                     </article>
 
 
-                    <!-- Past experiment -->
                     <article class="project-entry project-entry-experiment">
 
                         <div class="project-copy">
@@ -1544,7 +1404,6 @@
                     </article>
 
 
-                    <!-- Editorial note -->
                     <div class="editorial-note">
 
                         <p class="section-label">
@@ -1576,7 +1435,6 @@
             >
 
                 <div class="page-container">
-
 
                     <div class="wide-heading">
 
@@ -1614,7 +1472,6 @@
 
 
                     <div class="timeline">
-
 
                         <article class="timeline-item">
 
@@ -1731,7 +1588,6 @@
             >
 
                 <div class="page-container vision-layout">
-
 
                     <div class="vision-heading">
 
@@ -1863,7 +1719,6 @@
 
                 <div class="page-container section-grid">
 
-
                     <div class="section-copy">
 
                         <p class="section-number">
@@ -1971,7 +1826,6 @@
 
                 <div class="page-container">
 
-
                     <div class="wide-heading">
 
                         <p class="section-number">
@@ -1990,7 +1844,6 @@
 
 
                     <div class="interests-layout">
-
 
                         <div class="interest-list">
 
@@ -2022,7 +1875,6 @@
                     </div>
 
 
-                    <!-- Future visual / personal interest image -->
                     <figure
                         class="media-slot media-slot-interests"
                         data-media="personal-interest"
@@ -2049,7 +1901,6 @@
             >
 
                 <div class="page-container contact-layout">
-
 
                     <div>
 
@@ -2097,7 +1948,6 @@
         <footer class="site-footer">
 
             <div class="page-container footer-layout">
-
 
                 <div class="footer-identity">
 
