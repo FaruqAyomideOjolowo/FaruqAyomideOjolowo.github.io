@@ -1,21 +1,25 @@
 /* =========================================================
    FARUQ AYOMIDE OJOLOWO — FOUNDER WEBSITE
-   Interaction Layer
+   Interaction Layer — FIXED
    ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
 
   /* =======================================================
-     01. ELEMENTS
+     01. ELEMENTS — CORRECTED SELECTORS
      ======================================================= */
 
   const body = document.body;
 
-  const profileTrigger = document.querySelector(".site-mark");
-  const profileOrbit = document.querySelector(".profile-orbit");
+  // FIXED: Changed from .site-mark to .profile-trigger
+  const profileTrigger = document.querySelector(".profile-trigger");
+  
+  // FIXED: Changed from .profile-orbit to .profile-social-panel
+  const profilePanel = document.querySelector(".profile-social-panel");
+  const profileOrbit = document.querySelector(".profile-social-orbit");
 
   const menuButton = document.querySelector(".mobile-menu-button");
-  const mobileNavigation = document.querySelector(".mobile-navigation");
+  const mobileNavigation = document.querySelector("#mobile-navigation");
 
   const mobileLinks = document.querySelectorAll(
     ".mobile-navigation a"
@@ -25,9 +29,12 @@ document.addEventListener("DOMContentLoaded", () => {
     ".desktop-navigation a"
   );
 
+  // FIXED: Changed from .profile-social to correct class
   const socialLinks = document.querySelectorAll(
-    ".profile-social"
+    ".social-orbit-button"
   );
+
+  const pageContent = document.querySelector(".page-content");
 
 
   /* =======================================================
@@ -39,14 +46,21 @@ document.addEventListener("DOMContentLoaded", () => {
     body.classList.remove("menu-open");
 
     menuButton?.setAttribute("aria-expanded", "false");
-
     profileTrigger?.setAttribute("aria-expanded", "true");
+    profilePanel?.setAttribute("aria-hidden", "false");
+
+    // Trap focus in profile panel
+    profilePanel?.focus();
   }
 
   function closeProfile() {
     body.classList.remove("profile-open");
 
     profileTrigger?.setAttribute("aria-expanded", "false");
+    profilePanel?.setAttribute("aria-hidden", "true");
+
+    // Restore focus to trigger
+    profileTrigger?.focus();
   }
 
   function toggleProfile() {
@@ -67,14 +81,19 @@ document.addEventListener("DOMContentLoaded", () => {
     body.classList.remove("profile-open");
 
     menuButton?.setAttribute("aria-expanded", "true");
-
     profileTrigger?.setAttribute("aria-expanded", "false");
+    profilePanel?.setAttribute("aria-hidden", "true");
+    mobileNavigation?.setAttribute("aria-hidden", "false");
   }
 
   function closeMenu() {
     body.classList.remove("menu-open");
 
     menuButton?.setAttribute("aria-expanded", "false");
+    mobileNavigation?.setAttribute("aria-hidden", "true");
+
+    // Restore focus to menu button
+    menuButton?.focus();
   }
 
   function toggleMenu() {
@@ -87,157 +106,146 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /* =======================================================
-     04. DP CLICK
+     04. PREVENT OVERLAYS OPENING TOGETHER
+     ======================================================= */
+
+  function closeAllOverlays() {
+    closeProfile();
+    closeMenu();
+  }
+
+
+  /* =======================================================
+     05. DP CLICK
      ======================================================= */
 
   profileTrigger?.addEventListener("click", (event) => {
     event.preventDefault();
     event.stopPropagation();
-
     toggleProfile();
   });
 
 
   /* =======================================================
-     05. MENU BUTTON CLICK
+     06. MENU BUTTON CLICK
      ======================================================= */
 
   menuButton?.addEventListener("click", (event) => {
     event.preventDefault();
     event.stopPropagation();
-
     toggleMenu();
   });
 
 
   /* =======================================================
-     06. SOCIAL BUTTONS
+     07. SOCIAL BUTTONS
      ======================================================= */
 
   socialLinks.forEach((social) => {
-
     social.addEventListener("click", (event) => {
       event.stopPropagation();
     });
-
   });
 
 
   /* =======================================================
-     07. MOBILE NAVIGATION
+     08. MOBILE NAVIGATION LINKS
      ======================================================= */
 
   mobileLinks.forEach((link) => {
-
-    link.addEventListener("click", () => {
+    link.addEventListener("click", (event) => {
+      event.stopPropagation();
       closeMenu();
     });
-
   });
 
 
   /* =======================================================
-     08. DESKTOP NAVIGATION
+     09. DESKTOP NAVIGATION LINKS
      ======================================================= */
 
   desktopLinks.forEach((link) => {
-
-    link.addEventListener("click", () => {
-      closeProfile();
-      closeMenu();
+    link.addEventListener("click", (event) => {
+      event.stopPropagation();
+      closeAllOverlays();
     });
-
   });
 
 
   /* =======================================================
-     09. CLOSE PROFILE WHEN CLICKING OUTSIDE
+     10. CLOSE PROFILE WHEN CLICKING OUTSIDE
      ======================================================= */
 
-  profileOrbit?.addEventListener("click", (event) => {
-
-    if (
-      event.target === profileOrbit ||
-      event.target.classList.contains("profile-orbit")
-    ) {
+  profilePanel?.addEventListener("click", (event) => {
+    // Only close if clicking the panel background, not children
+    if (event.target === profilePanel) {
       closeProfile();
     }
-
   });
 
 
   /* =======================================================
-     10. ESCAPE KEY
+     11. CLOSE MENU WHEN CLICKING OUTSIDE
+     ======================================================= */
+
+  mobileNavigation?.addEventListener("click", (event) => {
+    // Allow clicks on nav links
+    if (event.target.closest("a")) {
+      return;
+    }
+    // Close if clicking canvas background
+    if (event.target === mobileNavigation) {
+      closeMenu();
+    }
+  });
+
+
+  /* =======================================================
+     12. ESCAPE KEY
      ======================================================= */
 
   document.addEventListener("keydown", (event) => {
-
     if (event.key !== "Escape") {
       return;
     }
 
-    closeProfile();
-    closeMenu();
-
+    closeAllOverlays();
   });
 
 
   /* =======================================================
-     11. PREVENT PROFILE + MENU FROM BEING OPEN TOGETHER
-     ======================================================= */
-
-  const observer = new MutationObserver(() => {
-
-    if (
-      body.classList.contains("profile-open") &&
-      body.classList.contains("menu-open")
-    ) {
-      body.classList.remove("menu-open");
-    }
-
-  });
-
-  observer.observe(body, {
-    attributes: true,
-    attributeFilter: ["class"]
-  });
-
-
-  /* =======================================================
-     12. ACTIVE SECTION NAVIGATION
+     13. ACTIVE SECTION NAVIGATION
      ======================================================= */
 
   const sections = document.querySelectorAll("main section[id]");
 
   const sectionObserver = new IntersectionObserver(
     (entries) => {
-
       entries.forEach((entry) => {
-
         if (!entry.isIntersecting) {
           return;
         }
 
         const currentId = entry.target.getAttribute("id");
 
+        // Remove active state from all links
         document
-          .querySelectorAll(
-            `.desktop-navigation a[href="#${currentId}"]`
-          )
+          .querySelectorAll(".desktop-navigation a")
           .forEach((link) => {
-
-            document
-              .querySelectorAll(".desktop-navigation a")
-              .forEach((item) => {
-                item.removeAttribute("aria-current");
-              });
-
-            link.setAttribute("aria-current", "page");
-
+            link.classList.remove("active");
+            link.removeAttribute("aria-current");
           });
 
-      });
+        // Add active state to current section link
+        const currentLink = document.querySelector(
+          `.desktop-navigation a[href="#${currentId}"]`
+        );
 
+        if (currentLink) {
+          currentLink.classList.add("active");
+          currentLink.setAttribute("aria-current", "page");
+        }
+      });
     },
     {
       rootMargin: "-35% 0px -55% 0px",
@@ -251,15 +259,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /* =======================================================
-     13. SMOOTH INTERNAL NAVIGATION
+     14. SMOOTH INTERNAL NAVIGATION
      ======================================================= */
 
   document
     .querySelectorAll('a[href^="#"]')
     .forEach((link) => {
-
       link.addEventListener("click", (event) => {
-
         const targetId = link.getAttribute("href");
 
         if (
@@ -278,24 +284,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
         event.preventDefault();
 
-        closeProfile();
-        closeMenu();
+        closeAllOverlays();
 
         target.scrollIntoView({
           behavior: "smooth",
           block: "start"
         });
-
       });
-
     });
 
 
   /* =======================================================
-     14. INITIAL STATE
+     15. INITIAL STATE
      ======================================================= */
 
-  closeProfile();
-  closeMenu();
+  closeAllOverlays();
 
 });
