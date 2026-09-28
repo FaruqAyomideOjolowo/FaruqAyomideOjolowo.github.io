@@ -319,7 +319,7 @@
     /* Hero Image Section */
     .hero-image-container {
       margin-top: 3rem;
-      margin-bottom: 4rem;
+      margin-bottom: 0.75rem;
       border-radius: 12px;
       overflow: hidden;
       background-color: #FFFFFF;
@@ -327,12 +327,15 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      will-change: transform;
+      backface-visibility: hidden;
     }
 
     .hero-image-container img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      display: block;
     }
 
     .hero-image-container.placeholder {
@@ -928,11 +931,11 @@
       });
     });
 
-    // ===== MOTION & ANIMATION EFFECTS =====
+    // ===== OPTIMIZED MOTION & ANIMATION EFFECTS =====
 
     // 1. Intersection Observer for fade-in animations
     const observerOptions = {
-      threshold: 0.1,
+      threshold: 0.05,
       rootMargin: '0px 0px -50px 0px'
     };
 
@@ -949,71 +952,46 @@
       observer.observe(section);
     });
 
-    // 2. Parallax effect on hero image
+    // 2. Optimized Parallax effect on hero image - use requestAnimationFrame
     const heroImage = document.querySelector('.hero-image-container');
+    let ticking = false;
+    let lastScrollY = 0;
+
     if (heroImage) {
       window.addEventListener('scroll', () => {
-        const scrolled = window.pageYOffset;
-        heroImage.style.transform = `translateY(${scrolled * 0.5}px)`;
-      });
+        lastScrollY = window.pageYOffset;
+        if (!ticking) {
+          window.requestAnimationFrame(() => {
+            // Only apply parallax if image is in viewport
+            const rect = heroImage.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom > 0) {
+              heroImage.style.transform = `translateY(${lastScrollY * 0.3}px)`;
+            }
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }, { passive: true });
     }
 
-    // 3. Liquid scroll effect on cards/sections
-    let lastScrollVelocity = 0;
-    let lastScrollY = 0;
-    let scrollTimeout = null;
+    // 3. Navbar shadow grows on scroll - optimized
+    const nav = document.querySelector('nav');
+    let navTicking = false;
 
     window.addEventListener('scroll', () => {
-      const currentScrollY = window.pageYOffset;
-      const velocity = currentScrollY - lastScrollY;
-      lastScrollVelocity = velocity;
-      lastScrollY = currentScrollY;
-
-      // Apply liquid effect to cards
-      const cards = document.querySelectorAll('.about-subsection, .principle-block, .social-link, .company-featured');
-      cards.forEach(card => {
-        const compression = Math.min(Math.abs(velocity) * 0.01, 0.05);
-        const scaleY = 1 - compression;
-        card.style.transform = `scaleY(${scaleY})`;
-        card.style.transition = 'transform 0.15s cubic-bezier(0.34, 1.56, 0.64, 1)';
-      });
-
-      // Reset after scroll ends
-      clearTimeout(scrollTimeout);
-      scrollTimeout = setTimeout(() => {
-        cards.forEach(card => {
-          card.style.transform = 'scaleY(1)';
+      if (!navTicking) {
+        window.requestAnimationFrame(() => {
+          const scrollY = window.pageYOffset;
+          const shadowIntensity = Math.min(scrollY / 100, 0.3);
+          nav.style.boxShadow = `0 2px ${20 * shadowIntensity}px rgba(0, 0, 0, ${shadowIntensity})`;
+          navTicking = false;
         });
-      }, 150);
+        navTicking = true;
+      }
     }, { passive: true });
 
-    // 4. Hover lift effect on interactive elements
-    const hoverElements = document.querySelectorAll('.btn, .social-link, .company-featured, section');
-    hoverElements.forEach(el => {
-      el.addEventListener('mouseenter', function() {
-        if (this.tagName !== 'SECTION') {
-          this.style.transform = 'translateY(-8px) scale(1.02)';
-          this.style.transition = 'all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)';
-        }
-      });
-
-      el.addEventListener('mouseleave', function() {
-        if (this.tagName !== 'SECTION') {
-          this.style.transform = 'translateY(0) scale(1)';
-        }
-      });
-    });
-
-    // 5. Navbar shadow grows on scroll
-    const nav = document.querySelector('nav');
-    window.addEventListener('scroll', () => {
-      const scrollY = window.pageYOffset;
-      const shadowIntensity = Math.min(scrollY / 100, 0.3);
-      nav.style.boxShadow = `0 2px ${20 * shadowIntensity}px rgba(0, 0, 0, ${shadowIntensity})`;
-      nav.style.transition = 'box-shadow 0.3s ease';
-    });
-
-    // 6. Button hover scale effect
+    // 4. Simplified hover effects (remove liquid scroll - was causing jank)
+    // Button hover scale effect
     document.querySelectorAll('.btn').forEach(btn => {
       btn.addEventListener('mouseenter', function() {
         this.style.transform = 'scale(1.05)';
@@ -1022,6 +1000,19 @@
 
       btn.addEventListener('mouseleave', function() {
         this.style.transform = 'scale(1)';
+      });
+    });
+
+    // 5. Hover lift effect on cards (subtle, performant)
+    const hoverElements = document.querySelectorAll('.social-link, .company-featured');
+    hoverElements.forEach(el => {
+      el.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-6px)';
+        this.style.transition = 'transform 0.3s ease';
+      });
+
+      el.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0)';
       });
     });
 
