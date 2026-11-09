@@ -267,7 +267,7 @@
     .j-card.is-featured .j-arrow { position: absolute; right: 20px; bottom: 22px; z-index: 2; }
 
     /* company cards: a tall glass card with the logo on top fading into the glass */
-    .j-card.is-company { display: flex; flex-direction: column; justify-content: flex-end; min-height: 480px; padding: 0; }
+    .j-card.is-company { display: flex; flex-direction: column; justify-content: flex-end; min-height: 530px; padding: 0; }
     .j-card.is-company .j-thumb {
       position: absolute; inset: 0 0 auto 0; width: auto; height: 60%; border-radius: 0; z-index: 0;
       display: grid; place-items: center; color: rgba(255,255,255,0.9);
@@ -542,7 +542,7 @@
           tag: "First company · Current focus",
           description: "A diversified entertainment, media and technology company I founded. Its focus is on developing original intellectual property, creative work, stories, characters, fictional worlds, digital products and experiences.",
           url: "https://apexuniversalstudios0-jpg.github.io/Apex-Universal-Studios/index.html",
-          image: "",
+          image: "apex-logo.jpg",
           monogram: "A",
           color: "linear-gradient(160deg,#9bd36b 0%,#2f8f7a 55%,#1c4a5c 100%)"
         }
@@ -559,7 +559,7 @@
           a.href = c.url; a.target = "_blank"; a.rel = "noopener noreferrer";
           a.setAttribute("aria-label", "Visit " + c.name + " (opens its website)");
           var thumb = mk("div", "j-thumb");
-          if (c.image) { thumb.style.backgroundImage = "url('" + c.image + "')"; thumb.style.backgroundSize = "cover"; thumb.style.backgroundPosition = "center"; }
+          if (c.image) { thumb.style.backgroundColor = "#000"; thumb.style.backgroundImage = "url('" + c.image + "')"; thumb.style.backgroundSize = "cover"; thumb.style.backgroundPosition = "center top"; }
           else { thumb.style.background = c.color || "linear-gradient(160deg,#8a7bff 0%,#4a5bd6 55%,#1d2a6b 100%)"; thumb.appendChild(mk("span", "j-monogram", c.monogram || (c.name || "?").charAt(0))); }
           a.appendChild(thumb);
           var body = mk("div", "j-body");
